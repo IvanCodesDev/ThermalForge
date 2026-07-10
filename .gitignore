@@ -1,0 +1,29 @@
+# Dependencies and generated output
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/coverage/
+**/*.tsbuildinfo
+
+# Runtime secrets and local environment
+**/.env
+**/.env.*
+!**/.env.example
+**/*.local
+
+# Logs and caches
+**/logs/
+**/*.log
+**/.cache/
+**/.tmp/
+
+# Personal IDE and operating-system state
+.cursor/
+.superpowers/
+.vscode/
+**/.idea/
+**/.DS_Store
+**/Thumbs.db
+
+# Root-level package metadata created without a workspace manifest
+/package-lock.json

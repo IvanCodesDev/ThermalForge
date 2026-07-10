@@ -1,0 +1,155 @@
+:root {
+  --brand: #ff5500;
+  --brand-50: #fff7ed;
+  --brand-300: #fdba74;
+  --brand-400: #fb923c;
+  --brand-500: #ff5500;
+  --brand-600: #ea580c;
+  --brand-700: #c2410c;
+  --brand-800: #9a3412;
+  --brand-900: #7c2d12;
+  --dark-bg: #050505;
+  --dark-card: #121212;
+  --dark-card-soft: #161616;
+  --dark-elevated: #1a1a1a;
+  --dark-border: rgba(255, 255, 255, 0.1);
+  --dark-border-soft: rgba(255, 255, 255, 0.05);
+  --dark-text: #888888;
+  --text-primary: #f3f4f6;
+  --text-secondary: #c4c4c4;
+  --text-muted: #888888;
+  --success: #00ff88;
+  --warning: #eab308;
+  --danger: #ff4d3d;
+  --info: #60a5fa;
+  --shadow-glow: 0 0 15px rgba(255, 85, 0, 0.3);
+  --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.28);
+  --radius-card: 20px;
+  --radius-control: 12px;
+  /* 液态玻璃表面：渐变高光层 + 半透明底色 + 背景模糊，三者配合使用 */
+  --glass-border: rgba(255, 255, 255, 0.13);
+  --glass-bg: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.09),
+    rgba(255, 255, 255, 0.02) 45%,
+    rgba(255, 255, 255, 0.05)
+  );
+  --glass-tint: rgba(17, 17, 17, 0.62);
+  --glass-blur: blur(18px) saturate(150%);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.09);
+  /* 统一品牌渐变：主按钮/激活态用 brand，深色大卡用 brand-deep，提示条用 accent-strip */
+  --gradient-brand: linear-gradient(
+    135deg,
+    #ff7a1f,
+    var(--brand-500) 48%,
+    #d84300
+  );
+  --gradient-brand-deep: linear-gradient(135deg, var(--brand-500), #cc2200);
+  --gradient-accent-strip: linear-gradient(
+    90deg,
+    rgba(255, 85, 0, 0.12),
+    rgba(255, 85, 0, 0.03) 55%,
+    transparent
+  );
+  --motion-fast: 180ms ease;
+  --motion-base: 300ms ease;
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  color: var(--text-primary);
+  background: var(--dark-bg);
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--dark-bg);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  overflow: hidden;
+  background: var(--dark-bg);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+button,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+button:focus-visible,
+[tabindex]:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--brand-400);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin-top: 0;
+}
+
+::selection {
+  background: rgba(255, 85, 0, 0.35);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

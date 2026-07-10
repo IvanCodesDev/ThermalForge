@@ -1,0 +1,5 @@
+{
+  "name": "视锂工坊 - 工业AI协同系统",
+  "description": "一个集成了智能问答、产线监控与安全运维的工业AI协作平台，专为视锂工坊设计。",
+  "requestFramePermissions": []
+}

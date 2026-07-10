@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>视锂工坊 - 工业AI协同系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                DEFAULT: '#ff5500', // CoinUnity Primary
+                50: '#fff7ed',
+                100: '#ffedd5',
+                200: '#fed7aa',
+                300: '#fdba74',
+                400: '#fb923c',
+                500: '#ff5500',
+                600: '#ea580c',
+                700: '#c2410c',
+                800: '#9a3412',
+                900: '#7c2d12',
+                950: '#0f0f10',
+              },
+              dark: {
+                bg: '#050505',
+                card: '#121212',
+                border: 'rgba(255, 255, 255, 0.1)',
+                text: '#888888',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            boxShadow: {
+              'glow': '0 0 15px rgba(255, 85, 0, 0.3)',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: #ffffff;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050505;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .glow-bg {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(255, 85, 0, 0.3) 0%, transparent 70%);
+        top: -50px;
+        left: -50px;
+        pointer-events: none;
+        z-index: 0;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "recharts": "https://esm.sh/recharts@^3.6.0",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

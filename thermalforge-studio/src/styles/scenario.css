@@ -1,0 +1,315 @@
+.selection-summary,
+.power-summary,
+.constraint-count {
+  display: flex;
+  min-width: 210px;
+  min-height: 46px;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 16px;
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  background: var(--glass-bg), var(--glass-tint);
+  box-shadow: var(--glass-highlight);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.selection-summary > svg,
+.power-summary > svg,
+.constraint-count > svg {
+  width: 18px;
+  height: 18px;
+  color: var(--brand-500);
+}
+
+.selection-summary span,
+.power-summary span,
+.constraint-count span {
+  color: var(--dark-text);
+  font-size: 9px;
+}
+
+.selection-summary strong,
+.power-summary strong,
+.constraint-count strong {
+  display: block;
+  max-width: 210px;
+  margin-top: 3px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.scenario-card {
+  position: relative;
+  display: flex;
+  min-height: 430px;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-card);
+  background: var(--dark-card);
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  box-shadow:
+    var(--shadow-card),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    border-color var(--motion-base),
+    background var(--motion-base),
+    box-shadow var(--motion-base),
+    transform var(--motion-base);
+}
+
+.scenario-card:hover {
+  border-color: rgba(255, 85, 0, 0.35);
+  background: #161616;
+  transform: translateY(-3px);
+}
+
+.scenario-card.is-selected {
+  border-color: rgba(255, 85, 0, 0.58);
+  background:
+    linear-gradient(145deg, rgba(255, 85, 0, 0.08), transparent 48%),
+    var(--dark-card);
+  box-shadow: var(--shadow-glow);
+}
+
+.scenario-card .glow-bg {
+  opacity: 0.24;
+}
+
+.scenario-card.is-selected .glow-bg {
+  opacity: 0.65;
+}
+
+.scenario-card-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: 25px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.scenario-index {
+  color: #454545;
+  font-family: Consolas, monospace;
+  font-size: 10px;
+}
+
+.scenario-code {
+  color: #555;
+  font-family: Consolas, monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+
+.recommended-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 85, 0, 0.26);
+  border-radius: 5px;
+  background: rgba(124, 45, 18, 0.3);
+  color: var(--brand-400);
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.scenario-icon {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 20px;
+  place-items: center;
+  border: 1px solid rgba(255, 85, 0, 0.25);
+  border-radius: 16px;
+  background: rgba(255, 85, 0, 0.12);
+  color: var(--brand-500);
+}
+
+.scenario-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.scenario-card h3 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 10px;
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.scenario-card > p {
+  position: relative;
+  z-index: 2;
+  min-height: 67px;
+  margin: 0 0 20px;
+  color: #999;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.scenario-problems {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding-top: 17px;
+  border-top: 1px solid var(--dark-border-soft);
+}
+
+.scenario-problems > span {
+  color: #666;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scenario-problems ul {
+  display: grid;
+  gap: 8px;
+  margin: 11px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scenario-problems li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #bbb;
+  font-size: 10px;
+}
+
+.scenario-problems li i {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--brand-500);
+  box-shadow: 0 0 7px rgba(255, 85, 0, 0.45);
+}
+
+.selection-indicator {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  height: 38px;
+  min-height: 38px;
+  flex: 0 0 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 18px;
+  padding: 0 12px;
+  overflow: hidden;
+  border: 1px solid var(--dark-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #777;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.selection-indicator svg {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+  opacity: 0;
+}
+
+.selection-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scenario-card.is-selected .selection-indicator {
+  border-color: var(--brand-500);
+  background: var(--brand-500);
+  color: #fff;
+  box-shadow: var(--shadow-glow);
+}
+
+.scenario-card.is-selected .selection-indicator svg {
+  opacity: 1;
+}
+
+.context-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-top: 24px;
+  padding: 17px 19px;
+  border: 1px solid rgba(255, 85, 0, 0.2);
+  border-radius: 15px;
+  background: var(--gradient-accent-strip), var(--glass-tint);
+  box-shadow: var(--glass-highlight);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.context-tip > svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  color: var(--brand-500);
+}
+
+.context-tip strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 11px;
+}
+
+.context-tip p {
+  margin: 0;
+  color: #8c8c8c;
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+@media (max-width: 1200px) {
+  .scenario-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .scenario-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scenario-card {
+    min-height: 390px;
+  }
+
+  .selection-summary,
+  .power-summary,
+  .constraint-count {
+    width: 100%;
+  }
+}

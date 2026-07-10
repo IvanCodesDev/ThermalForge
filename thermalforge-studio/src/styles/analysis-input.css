@@ -1,0 +1,445 @@
+.operating-input-card {
+  position: relative;
+  margin-top: 20px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-card);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(255, 85, 0, 0.12), transparent 28%),
+    var(--glass-bg),
+    var(--glass-tint);
+  box-shadow:
+    var(--shadow-card),
+    var(--glass-highlight);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.operating-input-card > *:not(.glow-bg) {
+  position: relative;
+  z-index: 2;
+}
+
+.operating-input-card > .glow-bg {
+  opacity: 0.38;
+}
+
+.operating-input-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--dark-border-soft);
+}
+
+.operating-input-heading .panel-heading {
+  margin: 0;
+}
+
+.input-source-badge {
+  display: flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 85, 0, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 85, 0, 0.08);
+  color: var(--brand-300);
+  font-size: 8px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.input-source-badge.is-measured {
+  border-color: rgba(0, 255, 136, 0.24);
+  background: rgba(0, 255, 136, 0.07);
+  color: var(--success);
+}
+
+.input-source-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+.operating-input-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.7fr);
+  gap: 1px;
+  background: var(--dark-border-soft);
+}
+
+.parameter-input-panel,
+.measurement-input-panel {
+  min-width: 0;
+  padding: 20px 22px;
+  background: rgba(8, 8, 8, 0.72);
+}
+
+.input-subheading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.input-subheading strong,
+.input-subheading small {
+  display: block;
+}
+
+.input-subheading strong {
+  margin-bottom: 4px;
+  color: #e3e3e3;
+  font-size: 11px;
+}
+
+.input-subheading small {
+  color: #666;
+  font-size: 8px;
+}
+
+.input-subheading > span {
+  color: var(--brand-600);
+  font-family: Consolas, monospace;
+  font-size: 7px;
+  letter-spacing: 0.12em;
+}
+
+.operating-field-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.operating-field {
+  display: grid;
+  min-width: 0;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--dark-border-soft);
+  border-radius: 12px;
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.035), transparent 55%),
+    rgba(0, 0, 0, 0.3);
+  transition:
+    border-color var(--motion-fast),
+    background var(--motion-fast);
+}
+
+.operating-field:focus-within {
+  border-color: rgba(255, 85, 0, 0.42);
+  background:
+    linear-gradient(155deg, rgba(255, 85, 0, 0.08), transparent 55%),
+    rgba(0, 0, 0, 0.36);
+}
+
+.operating-field.is-overridden {
+  opacity: 0.52;
+}
+
+.operating-field > span:first-child strong,
+.operating-field > span:first-child small {
+  display: block;
+}
+
+.operating-field > span:first-child strong {
+  margin-bottom: 4px;
+  color: #cfcfcf;
+  font-size: 9px;
+}
+
+.operating-field > span:first-child small {
+  overflow: hidden;
+  color: #5f5f5f;
+  font-size: 7px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.number-input-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  min-height: 38px;
+  overflow: hidden;
+  border: 1px solid #303030;
+  border-radius: 9px;
+  background: rgba(5, 5, 5, 0.84);
+}
+
+.number-input-shell:focus-within {
+  border-color: var(--brand-600);
+  box-shadow: 0 0 0 2px rgba(255, 85, 0, 0.08);
+}
+
+.number-input-shell input {
+  width: 100%;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  font-family: Consolas, monospace;
+  font-size: 12px;
+}
+
+.number-input-shell input:disabled {
+  color: #777;
+  cursor: not-allowed;
+}
+
+.number-input-shell b {
+  padding: 0 10px;
+  color: var(--brand-400);
+  font-family: Consolas, monospace;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.csv-dropzone {
+  display: flex;
+  min-height: 190px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 22px;
+  border: 1px dashed rgba(255, 85, 0, 0.38);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(255, 85, 0, 0.1), transparent 46%),
+    rgba(0, 0, 0, 0.24);
+  color: #777;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color var(--motion-base),
+    background var(--motion-base);
+}
+
+.csv-dropzone:hover {
+  border-color: var(--brand-500);
+  background:
+    radial-gradient(circle at 50% 25%, rgba(255, 85, 0, 0.16), transparent 46%),
+    rgba(255, 85, 0, 0.025);
+}
+
+.csv-dropzone > svg {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 12px;
+  color: var(--brand-500);
+}
+
+.csv-dropzone strong {
+  color: #ddd;
+  font-size: 10px;
+}
+
+.csv-dropzone span {
+  margin-top: 7px;
+  color: var(--brand-300);
+  font-family: Consolas, monospace;
+  font-size: 8px;
+}
+
+.csv-dropzone small {
+  margin-top: 8px;
+  color: #5c5c5c;
+  font-size: 7px;
+}
+
+.csv-dropzone input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.measurement-summary {
+  min-height: 190px;
+  padding: 14px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 14px;
+  background:
+    linear-gradient(155deg, rgba(0, 255, 136, 0.07), transparent 55%),
+    rgba(0, 0, 0, 0.3);
+}
+
+.measurement-summary-head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.measurement-file-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(0, 255, 136, 0.1);
+  color: var(--success);
+}
+
+.measurement-file-icon svg,
+.measurement-summary-head button svg {
+  width: 15px;
+  height: 15px;
+}
+
+.measurement-summary-head strong,
+.measurement-summary-head small {
+  display: block;
+}
+
+.measurement-summary-head strong {
+  color: #d8d8d8;
+  font-size: 9px;
+}
+
+.measurement-summary-head small {
+  margin-top: 4px;
+  color: #61776c;
+  font-size: 7px;
+}
+
+.measurement-summary-head button {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #777;
+  cursor: pointer;
+}
+
+.measurement-summary dl {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  margin: 20px 0 0;
+}
+
+.measurement-summary dl > div {
+  padding: 9px;
+  border: 1px solid var(--dark-border-soft);
+  border-radius: 9px;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.measurement-summary dt {
+  color: #626262;
+  font-size: 7px;
+}
+
+.measurement-summary dd {
+  margin: 5px 0 0;
+  color: #ddd;
+  font-family: Consolas, monospace;
+  font-size: 9px;
+}
+
+.csv-template-button {
+  display: flex;
+  width: 100%;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  border: 1px solid var(--dark-border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #999;
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.csv-template-button:hover {
+  border-color: rgba(255, 85, 0, 0.3);
+  color: var(--brand-300);
+}
+
+.csv-template-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.csv-status {
+  margin: 10px 0 0;
+  padding: 9px 10px;
+  border-radius: 8px;
+  font-size: 8px;
+  line-height: 1.55;
+}
+
+.csv-status.is-success {
+  background: rgba(0, 255, 136, 0.07);
+  color: #8ed9b3;
+}
+
+.csv-status.is-error {
+  background: rgba(255, 61, 46, 0.08);
+  color: #e69a91;
+}
+
+.input-contract-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 22px;
+  border-top: 1px solid var(--dark-border-soft);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.input-contract-note span {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: rgba(255, 85, 0, 0.1);
+  color: var(--brand-300);
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.input-contract-note p {
+  margin: 0;
+  color: #717171;
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1080px) {
+  .operating-input-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .operating-field-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .operating-input-heading,
+  .input-contract-note {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .parameter-input-panel,
+  .measurement-input-panel {
+    padding: 17px;
+  }
+
+  .operating-field-grid,
+  .measurement-summary dl {
+    grid-template-columns: 1fr;
+  }
+}
