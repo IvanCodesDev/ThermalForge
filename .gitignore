@@ -27,3 +27,6 @@
 
 # Root-level package metadata created without a workspace manifest
 /package-lock.json
+
+# Local design-reference project; not part of the published application
+/shiligongfang/
