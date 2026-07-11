@@ -1,32 +1,22 @@
-# React + TypeScript + Vite
+# thermalforge-studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+ThermalForge Agent 前端（React + TypeScript + Vite + React Three Fiber）。
 
-Currently, two official plugins are available:
+完整安装、联调与能力边界说明见仓库根目录 [`README.md`](../README.md)。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 常用命令
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
+npm run test
+npm run build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+开发时默认把 `/v1`、`/health` 代理到本机 API（见 `vite.config.ts`）。从 OpenAPI 生成客户端：
+
+```bash
+npm run api:generate
+```
+
+契约文件：`../thermalforge-api/openapi.json`。
