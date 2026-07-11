@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thermalforge.dev/schemas/library_entry.schema.json",
+  "title": "ThermalForge 库条目（LibraryEntry · §2.5）",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "device_context": {
+      "$ref": "user_input.schema.json"
+    },
+    "structure": {
+      "type": "object",
+      "description": "结构几何参数（含 structure_type）"
+    },
+    "model_path": {
+      "type": "string"
+    },
+    "preview_img": {
+      "type": "string"
+    },
+    "perf_notes": {
+      "type": "string"
+    },
+    "constraint_vector": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    }
+  },
+  "required": [
+    "case_id",
+    "source",
+    "device_context",
+    "structure"
+  ],
+  "additionalProperties": false
+}

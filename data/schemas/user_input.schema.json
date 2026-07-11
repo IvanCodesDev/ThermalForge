@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thermalforge.dev/schemas/user_input.schema.json",
+  "title": "ThermalForge 上游输入层（UserInput）",
+  "type": "object",
+  "properties": {
+    "device_type": {
+      "type": "string",
+      "enum": [
+        "关节电机",
+        "Jetson/边缘计算盒",
+        "MOSFET/驱动器",
+        "传感器舱",
+        "灵巧手模组",
+        "无人机动力电机",
+        "无人机电调",
+        "工业变频器",
+        "医疗激光模块"
+      ],
+      "title": "器件类型"
+    },
+    "dimensions": {
+      "type": "object",
+      "title": "尺寸(mm)",
+      "properties": {
+        "length_mm": {
+          "type": "number"
+        },
+        "width_mm": {
+          "type": "number"
+        },
+        "height_mm": {
+          "type": "number"
+        },
+        "outer_dia_mm": {
+          "type": "number"
+        },
+        "inner_dia_mm": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "power_w": {
+      "type": "number",
+      "minimum": 0.1,
+      "title": "功耗 W"
+    },
+    "max_temp_c": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 300,
+      "title": "允许最高温度 ℃"
+    },
+    "material": {
+      "type": "string",
+      "enum": [
+        "铝1060",
+        "铝6061",
+        "铜",
+        "钢",
+        "工程塑料",
+        "PCB基材"
+      ],
+      "title": "材料"
+    },
+    "has_fan": {
+      "type": "boolean",
+      "title": "是否强制风冷"
+    },
+    "max_weight_g": {
+      "type": "number",
+      "minimum": 0.1,
+      "title": "重量上限 g"
+    },
+    "manufacturing": {
+      "type": "string",
+      "enum": [
+        "3D打印",
+        "CNC",
+        "钣金",
+        "CNC+3D打印"
+      ],
+      "title": "制造方式"
+    },
+    "ambient_temp_c": {
+      "type": "number",
+      "minimum": -40,
+      "maximum": 80,
+      "title": "环境温度 ℃"
+    }
+  },
+  "required": [
+    "device_type",
+    "power_w",
+    "max_temp_c",
+    "material",
+    "max_weight_g"
+  ],
+  "additionalProperties": false
+}

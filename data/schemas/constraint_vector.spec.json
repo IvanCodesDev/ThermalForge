@@ -1,0 +1,169 @@
+{
+  "title": "ThermalForge 用户意图约束向量（constraint_vector）",
+  "dimension": 29,
+  "space": "user_intent",
+  "note": "UserInput.to_vector() 与 LibraryEntry.constraint_vector 同空间，用于最近邻检索",
+  "components": [
+    {
+      "block": "device_type",
+      "field": "关节电机",
+      "type": "onehot"
+    },
+    {
+      "block": "device_type",
+      "field": "Jetson/边缘计算盒",
+      "type": "onehot"
+    },
+    {
+      "block": "device_type",
+      "field": "MOSFET/驱动器",
+      "type": "onehot"
+    },
+    {
+      "block": "device_type",
+      "field": "传感器舱",
+      "type": "onehot"
+    },
+    {
+      "block": "device_type",
+      "field": "灵巧手模组",
+      "type": "onehot"
+    },
+    {
+      "block": "device_type",
+      "field": "无人机动力电机",
+      "type": "onehot"
+    },
+    {
+      "block": "device_type",
+      "field": "无人机电调",
+      "type": "onehot"
+    },
+    {
+      "block": "device_type",
+      "field": "工业变频器",
+      "type": "onehot"
+    },
+    {
+      "block": "device_type",
+      "field": "医疗激光模块",
+      "type": "onehot"
+    },
+    {
+      "block": "material",
+      "field": "铝1060",
+      "type": "onehot"
+    },
+    {
+      "block": "material",
+      "field": "铝6061",
+      "type": "onehot"
+    },
+    {
+      "block": "material",
+      "field": "铜",
+      "type": "onehot"
+    },
+    {
+      "block": "material",
+      "field": "钢",
+      "type": "onehot"
+    },
+    {
+      "block": "material",
+      "field": "工程塑料",
+      "type": "onehot"
+    },
+    {
+      "block": "material",
+      "field": "PCB基材",
+      "type": "onehot"
+    },
+    {
+      "block": "manufacturing",
+      "field": "3D打印",
+      "type": "onehot"
+    },
+    {
+      "block": "manufacturing",
+      "field": "CNC",
+      "type": "onehot"
+    },
+    {
+      "block": "manufacturing",
+      "field": "钣金",
+      "type": "onehot"
+    },
+    {
+      "block": "manufacturing",
+      "field": "CNC+3D打印",
+      "type": "onehot"
+    },
+    {
+      "block": "has_fan",
+      "field": "has_fan",
+      "type": "binary"
+    },
+    {
+      "block": "thermal_load",
+      "field": "thermal_load_W_per_mm3",
+      "type": "norm",
+      "range": [
+        0.0,
+        0.05
+      ]
+    },
+    {
+      "block": "temp_headroom",
+      "field": "max_temp_c-ambient_c",
+      "type": "norm",
+      "range": [
+        5.0,
+        95.0
+      ]
+    },
+    {
+      "block": "max_weight",
+      "field": "max_weight_g",
+      "type": "norm",
+      "range": [
+        1.0,
+        500.0
+      ]
+    },
+    {
+      "block": "ambient",
+      "field": "ambient_temp_c",
+      "type": "norm",
+      "range": [
+        25.0,
+        120.0
+      ]
+    },
+    {
+      "block": "preferred_medium",
+      "field": "medium:air",
+      "type": "onehot"
+    },
+    {
+      "block": "preferred_medium",
+      "field": "medium:liquid",
+      "type": "onehot"
+    },
+    {
+      "block": "preferred_medium",
+      "field": "medium:phase_change",
+      "type": "onehot"
+    },
+    {
+      "block": "preferred_medium",
+      "field": "medium:heat_pipe",
+      "type": "onehot"
+    },
+    {
+      "block": "preferred_medium",
+      "field": "medium:forced_air",
+      "type": "onehot"
+    }
+  ]
+}

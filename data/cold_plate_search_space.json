@@ -1,0 +1,22 @@
+{
+  "base": {
+    "flow_width_x": 30.0,
+    "flow_length_y": 48.0,
+    "margin_left": 2.0,
+    "margin_right": 2.0,
+    "margin_bottom": 2.0,
+    "margin_top": 2.0,
+    "t_layer1": 2.0,
+    "t_layer2": 0.25,
+    "t_layer3": 1.0,
+    "channel_width": 0.1,
+    "channel_gap": 0.1,
+    "manifold_length": 4.0
+  },
+  "search_space": {
+    "channel_width": [0.08, 0.1, 0.12],
+    "channel_gap": [0.08, 0.1, 0.12],
+    "t_layer2": [0.2, 0.25, 0.3],
+    "manifold_length": [3.0, 4.0, 5.0]
+  }
+}

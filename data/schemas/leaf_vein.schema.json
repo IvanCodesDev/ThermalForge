@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thermalforge.dev/schemas/leaf_vein.schema.json",
+  "title": "ThermalForge leaf_vein 结构几何参数",
+  "type": "object",
+  "properties": {
+    "vein_archetype": {
+      "type": "string",
+      "enum": [
+        "pinnate",
+        "palmate",
+        "fractal_tree"
+      ],
+      "title": "vein_archetype"
+    },
+    "trunk_count": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 8,
+      "title": "trunk_count"
+    },
+    "branch_levels": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 6,
+      "title": "branch_levels"
+    },
+    "branch_angle": {
+      "type": "number",
+      "minimum": 15,
+      "maximum": 75,
+      "title": "branch_angle"
+    },
+    "branch_ratio": {
+      "type": "number",
+      "minimum": 0.3,
+      "maximum": 0.9,
+      "title": "branch_ratio"
+    },
+    "width_trunk": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 5,
+      "title": "width_trunk"
+    },
+    "width_tip": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 1,
+      "title": "width_tip"
+    },
+    "length_scale": {
+      "type": "number",
+      "minimum": 10,
+      "maximum": 200,
+      "title": "length_scale"
+    },
+    "channel_depth": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 10,
+      "title": "channel_depth"
+    },
+    "density_gradient": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "title": "density_gradient"
+    },
+    "tortuosity": {
+      "type": "number",
+      "minimum": 1.0,
+      "maximum": 3.0,
+      "title": "tortuosity"
+    },
+    "symmetry": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "title": "symmetry"
+    },
+    "porosity": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 0.6,
+      "title": "porosity"
+    },
+    "boundary_shape": {
+      "type": "string",
+      "enum": [
+        "rect",
+        "circle",
+        "freeform"
+      ],
+      "title": "boundary_shape"
+    },
+    "inlet_pos": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "title": "inlet_pos"
+    },
+    "outlet_pos": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "title": "outlet_pos"
+    },
+    "flow_direction_deg": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 360,
+      "title": "flow_direction_deg"
+    },
+    "cooling_medium": {
+      "type": "string",
+      "enum": [
+        "air",
+        "liquid",
+        "phase_change",
+        "heat_pipe",
+        "forced_air"
+      ],
+      "title": "cooling_medium"
+    }
+  },
+  "required": [
+    "vein_archetype",
+    "trunk_count",
+    "branch_levels",
+    "branch_angle",
+    "branch_ratio",
+    "width_trunk",
+    "width_tip",
+    "length_scale",
+    "channel_depth",
+    "density_gradient",
+    "tortuosity",
+    "symmetry",
+    "porosity",
+    "boundary_shape",
+    "inlet_pos",
+    "outlet_pos",
+    "flow_direction_deg",
+    "cooling_medium"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thermalforge.dev/schemas/flat.schema.json",
+  "title": "ThermalForge flat 结构几何参数",
+  "type": "object",
+  "properties": {
+    "length_scale": {
+      "type": "number",
+      "minimum": 10,
+      "maximum": 200,
+      "title": "length_scale"
+    },
+    "channel_depth": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 10,
+      "title": "channel_depth"
+    },
+    "boundary_shape": {
+      "type": "string",
+      "enum": [
+        "rect",
+        "circle",
+        "freeform"
+      ],
+      "title": "boundary_shape"
+    },
+    "cooling_medium": {
+      "type": "string",
+      "enum": [
+        "air",
+        "liquid",
+        "phase_change",
+        "heat_pipe",
+        "forced_air"
+      ],
+      "title": "cooling_medium"
+    }
+  },
+  "required": [
+    "length_scale",
+    "channel_depth",
+    "boundary_shape",
+    "cooling_medium"
+  ],
+  "additionalProperties": false
+}

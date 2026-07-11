@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thermalforge.dev/schemas/channel.schema.json",
+  "title": "ThermalForge channel 结构几何参数",
+  "type": "object",
+  "properties": {
+    "channel_pattern": {
+      "type": "string",
+      "enum": [
+        "parallel",
+        "serpentine",
+        "manifold",
+        "pinfin",
+        "topo_opt"
+      ],
+      "title": "channel_pattern"
+    },
+    "length_scale": {
+      "type": "number",
+      "minimum": 10,
+      "maximum": 300,
+      "title": "length_scale"
+    },
+    "channel_width": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 3,
+      "title": "channel_width"
+    },
+    "channel_height": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 10,
+      "title": "channel_height"
+    },
+    "channel_pitch": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 10,
+      "title": "channel_pitch"
+    },
+    "channel_length": {
+      "type": "number",
+      "minimum": 10,
+      "maximum": 300,
+      "title": "channel_length"
+    },
+    "channel_count": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 200,
+      "title": "channel_count"
+    },
+    "aspect_ratio": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 20,
+      "title": "aspect_ratio"
+    },
+    "bend_radius": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 50,
+      "title": "bend_radius"
+    },
+    "serpentine_turns": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 50,
+      "title": "serpentine_turns"
+    },
+    "manifold_type": {
+      "type": "string",
+      "enum": [
+        "Z",
+        "U",
+        "tree",
+        "none"
+      ],
+      "title": "manifold_type"
+    },
+    "wall_thickness": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 5,
+      "title": "wall_thickness"
+    },
+    "topology_complexity": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "title": "topology_complexity"
+    },
+    "porosity": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 0.8,
+      "title": "porosity"
+    },
+    "boundary_shape": {
+      "type": "string",
+      "enum": [
+        "rect",
+        "circle",
+        "freeform"
+      ],
+      "title": "boundary_shape"
+    },
+    "inlet_outlet_config": {
+      "type": "string",
+      "enum": [
+        "same_side",
+        "opp_side",
+        "manifold"
+      ],
+      "title": "inlet_outlet_config"
+    },
+    "cooling_medium": {
+      "type": "string",
+      "enum": [
+        "air",
+        "liquid",
+        "phase_change",
+        "heat_pipe",
+        "forced_air"
+      ],
+      "title": "cooling_medium"
+    }
+  },
+  "required": [
+    "channel_pattern",
+    "length_scale",
+    "channel_width",
+    "channel_height",
+    "channel_pitch",
+    "channel_length",
+    "channel_count",
+    "aspect_ratio",
+    "bend_radius",
+    "serpentine_turns",
+    "manifold_type",
+    "wall_thickness",
+    "topology_complexity",
+    "porosity",
+    "boundary_shape",
+    "inlet_outlet_config",
+    "cooling_medium"
+  ],
+  "additionalProperties": false
+}

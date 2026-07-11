@@ -96,6 +96,7 @@ def build_default_tool_adapters() -> ToolAdapterRegistry:
     registry.register("simulation_result_reader", lambda payload, context: payload)
     registry.register("optimization_feedback_reader", lambda payload, context: payload)
     registry.register("optimization_plan_reader", lambda payload, context: payload)
+    registry.register("foc_demo_snapshot_reader", lambda payload, context: payload.get("source_snapshot", {}))
     return registry
 
 
@@ -124,6 +125,13 @@ def build_default_quality_gates() -> QualityGateRegistry:
     registry.register(
         "confirmed_plan",
         lambda input_payload, output_payload, context: bool(output_payload),
+    )
+    registry.register(
+        "multiview_complete",
+        lambda input_payload, output_payload, context: (
+            {item.get("id") for item in output_payload.get("views", []) if isinstance(item, dict)}
+            == {"mother_three_quarter", "front", "left", "rear", "top", "elbow_section"}
+        ),
     )
     return registry
 

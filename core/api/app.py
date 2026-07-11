@@ -56,6 +56,9 @@ from core.api.routes.engineering_state import router as engineering_state_router
 from core.api.routes.simulation_orchestration import router as simulation_orchestration_router, development_router as simulation_development_router
 from core.api.routes.agent_registry import router as agent_registry_router, development_router as agent_registry_development_router
 from core.api.routes.knowledge import router as knowledge_router
+from core.api.routes.exploded_view import router as exploded_view_router
+from core.api.routes.component_explanations import router as component_explanations_router
+from core.api.routes.projects import router as projects_router
 from core.config import get_settings
 
 DATA = ROOT / "data"
@@ -114,6 +117,9 @@ app.include_router(engineering_state_router)
 app.include_router(simulation_orchestration_router)
 app.include_router(agent_registry_router)
 app.include_router(knowledge_router)
+app.include_router(exploded_view_router)
+app.include_router(component_explanations_router)
+app.include_router(projects_router)
 if not settings.is_real:
     app.include_router(workbench_router)
     app.include_router(foc_demo_router)
