@@ -1,0 +1,51 @@
+sequenceDiagram
+    autonumber
+    actor User
+    participant Script1 as build_engineering_state_from_step.py
+    participant Reader as StepReader
+    participant Builder as StepToEngineeringStateBuilder
+    participant Svc as EngineeringStateService
+    participant FS as outputs/iki1602
+
+    User->>Script1: python build_engineering_state_from_step.py IKI1602.STEP
+    Script1->>Reader: parse(step_path)
+    Reader->>Reader: 词法解析 ISO-10303-21 + 几何抽取
+    Reader-->>Script1: StepParseResult(bbox_mm, part_count, cylinders[])
+    Script1->>Builder: build(project_id, result, step_path)
+    Builder->>Builder: 同轴分桶聚类圆柱 → Joints (OQ6)
+    Builder->>Builder: 默认铝/钢 Materials + 默认热耗 ThermalLoads (OQ1)
+    Builder-->>Script1: EngineeringState(revision=1, unresolved=1)
+    Script1->>Svc: put(state, expected_revision=0)
+    Svc-->>Script1: EngineeringState(revision=1)
+    Script1->>FS: write engineering-state.json
+
+    Note over User,FS: ===== 特性一 · 第二脚本（几何交接） =====
+    actor User2
+    participant Script2 as build_spaceclaim_handoff.py
+    participant Compiler as SpaceClaimHandoffCompiler
+    participant Renderer as SpaceClaimV251Renderer
+    User2->>Script2: python build_spaceclaim_handoff.py
+    Script2->>Svc: get(project_id, revision=1)
+    Svc-->>Script2: EngineeringState
+    Script2->>Compiler: compile(state)
+    Compiler->>Compiler: 推导 segment_angle_deg=360 & fins 默认 (OQ3)
+    Compiler->>Compiler: Material→MaterialProperties 补缺 8 字段 (OQ5)
+    Compiler->>Compiler: 派生 named_selections / contacts / output_plan
+    Compiler-->>Script2: SpaceClaimHandoffContract(approval_status=approved)
+    Script2->>FS: write spaceclaim-handoff.json
+    Script2->>Renderer: write(handoff, workspace)
+    Renderer-->>Script2: outputs/iki1602/spaceclaim-handoff.py
+
+    Note over User,FS: ===== 特性二 · PDF 预提取 → 知识库（幂等） =====
+    actor User3
+    participant Script3 as seed_knowledge_base.py / PDF 管线
+    participant Ext as PdfExtractor
+    participant Tpl as Templates
+    participant Lib as KnowledgeLibrary
+    User3->>Script3: 传入 PDF 或执行 seed
+    Script3->>Ext: extract(pdf_path)
+    Ext->>Tpl: 套 MotorDatasheetTemplate / RobotArmSpecTemplate
+    Tpl-->>Ext: 结构化字段（低置信 → needs_review, OQ7）
+    Ext->>Lib: upsert_motor / upsert_material (content_hash 幂等)
+    Lib-->>Ext: 已存在则跳过
+    Ext-->>Script3: DocEntry(status)

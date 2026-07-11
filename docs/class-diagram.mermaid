@@ -1,0 +1,123 @@
+classDiagram
+    %% ===== 特性一：零依赖 STEP 解析 → EngineeringState → SpaceClaim Handoff =====
+    class StepReader {
+        +parse(path: Path) StepParseResult
+        -_tokenize(text: str) list~str~
+        -_build_entities(lines) dict~str,StepEntity~
+        -_extract_cylinders(entities) list~CylinderFeature~
+        -_bbox(entities) tuple~float,float,float~
+        -_part_count(entities) int
+    }
+    class StepParseResult {
+        +source_id: str
+        +bbox_mm: tuple~float,float,float~
+        +part_count: int
+        +cylinders: list~CylinderFeature~
+    }
+    class CylinderFeature {
+        +entity_id: str
+        +radius_mm: float
+        +axis: tuple~float,float,float~
+        +center_mm: tuple~float,float,float~
+        +length_mm: float|None
+        +part_id: str
+    }
+    class StepToEngineeringStateBuilder {
+        +build(project_id, result, source_path) EngineeringState
+        -_cluster_joints(cylinders) list~Joint~
+        -_default_materials() list~Material~
+        -_default_thermal_loads(joints) list~ThermalLoad~
+        -_default_operating_cases() list~OperatingCase~
+    }
+    class SpaceClaimHandoffCompiler {
+        +compile(state: EngineeringState) SpaceClaimHandoffContract
+        -_joint_parameters(joint) JointParameters
+        -_material_properties(material) MaterialProperties
+        -_named_selections(state) list~NamedSelection~
+        -_contacts(state) list~Contact~
+        -_output_plan(state) SpaceClaimOutputPlan
+    }
+    class SpaceClaimV251Renderer {
+        +render(handoff) str
+        +write(handoff, workspace) Path
+    }
+
+    StepReader ..> StepParseResult : produces
+    StepParseResult *-- CylinderFeature : cylinders
+    StepToEngineeringStateBuilder ..> StepParseResult : consumes
+    StepToEngineeringStateBuilder ..> CylinderFeature : clusters into
+    SpaceClaimHandoffCompiler ..> EngineeringState : consumes
+    SpaceClaimHandoffCompiler ..> SpaceClaimHandoffContract : produces
+    SpaceClaimV251Renderer ..> SpaceClaimHandoffContract : renders
+
+    %% ===== 特性二：文档模板 + PDF 预提取知识库 =====
+    class MotorDatasheetTemplate {
+        +motor_type: str = "BLDC"
+        +rated_power_w: float|None
+        +rated_voltage_v: float|None
+        +rated_speed_rpm: float|None
+        +winding_resistance_ohm: float|None
+        +efficiency: float|None
+    }
+    class RobotArmSpecTemplate {
+        +motor_type: str = "BLDC"
+        +dof: int|None
+        +reach_mm: float|None
+        +payload_kg: float|None
+    }
+    class MaterialSpecTemplate {
+        +name: str
+        +density_kg_m3: float|None
+        +thermal_conductivity_w_mk: float|None
+        +specific_heat_j_kgk: float|None
+        +youngs_modulus_pa: float|None
+    }
+    class KnowledgeLibrary {
+        +__init__(db_path: Path)
+        +upsert_motor(entry) MotorEntry
+        +upsert_material(entry) MaterialEntry
+        +upsert_doc(entry) DocEntry
+        +search_by_motor_type(motor_type) list~MotorEntry~
+        +search_by_material(name) list~MaterialEntry~
+        +search_by_keyword(text) list~DocEntry~
+    }
+    class MotorEntry {
+        +entry_id: str
+        +motor_type: str
+        +params_json: str
+        +source_id: str
+        +content_hash: str
+    }
+    class MaterialEntry {
+        +material_id: str
+        +name: str
+        +properties_json: str
+        +source_id: str
+    }
+    class DocEntry {
+        +doc_id: str
+        +filename: str
+        +content_hash: str
+        +status: str
+        +extracted_json: str
+    }
+    class PdfExtractor {
+        +extract(path: Path) DocExtractionResult
+        -_map_to_template(raw: dict) Mapping
+    }
+    class BldcDefaults {
+        +DEFAULT_BLDC_MOTOR: dict
+        +DEFAULT_MATERIALS: dict
+        +DEFAULT_THERMAL_LOSS_FRACTION: float
+        +default_material_properties(material_id) dict
+        +default_motor_thermal_load_w() float
+    }
+
+    KnowledgeLibrary *-- MotorEntry
+    KnowledgeLibrary *-- MaterialEntry
+    KnowledgeLibrary *-- DocEntry
+    PdfExtractor ..> MotorDatasheetTemplate : fills
+    PdfExtractor ..> RobotArmSpecTemplate : fills
+    PdfExtractor ..> KnowledgeLibrary : upserts (idempotent)
+    SpaceClaimHandoffCompiler ..> BldcDefaults : 补缺材质字段 OQ5
+    StepToEngineeringStateBuilder ..> BldcDefaults : 默认电机热耗 OQ1

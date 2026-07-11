@@ -1,0 +1,14 @@
+{
+  "id": "specification_agent",
+  "version": "1.0.0",
+  "model": "gpt-5.6-sol",
+  "role": "工程规格抽取",
+  "prompt_id": "specification_extraction.v1",
+  "input_schema": {"type": "object"},
+  "output_schema": {"type": "object"},
+  "skills": ["specification_extraction"],
+  "tools": ["source_content_reader"],
+  "permissions": [],
+  "quality_gates": [{"id": "strict_output", "description": "输出必须通过严格契约", "required": true}],
+  "retry_policy": {"max_attempts": 2, "backoff_seconds": 0.0, "retryable_errors": ["invalid_json"]}
+}
