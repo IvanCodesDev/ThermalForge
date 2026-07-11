@@ -1,0 +1,1 @@
+"""ThermalForge backend application."""

@@ -1,0 +1,2937 @@
+{
+  "schemaVersion": "1.0",
+  "generatedBy": "thermalforge-studio/src/analysis/thermalEngine.ts",
+  "numericTolerance": 0.000001,
+  "cases": [
+    {
+      "name": "robot-joint-estimate",
+      "generatedAt": "2026-07-11T00:00:00.000Z",
+      "request": {
+        "hardwareId": "robot-joint",
+        "jointId": "knee",
+        "heatSources": {
+          "motor-winding": 60,
+          "mosfet": 20
+        },
+        "constraints": [
+          "sealed-case",
+          "warranty-seal",
+          "motor-untouched",
+          "reducer-untouched",
+          "cable-clearance",
+          "bearing-clearance",
+          "weight-limit"
+        ],
+        "optimizationGoals": [
+          "delay-limit",
+          "lower-hotspot",
+          "weight-limit",
+          "original-structure"
+        ],
+        "inputs": {
+          "ambientTemperatureC": 25,
+          "initialTemperatureC": 30,
+          "thermalLimitC": 80,
+          "durationMinutes": 15,
+          "dutyCyclePercent": 85,
+          "airflowMps": 0.3,
+          "componentMassKg": 1.8
+        },
+        "measurements": []
+      },
+      "expected": {
+        "id": "analysis-2026-07-11T00:00:00.000Z",
+        "generatedAt": "2026-07-11T00:00:00.000Z",
+        "source": "engineering-estimate",
+        "methodLabel": "一阶集总参数 RC 工程估算",
+        "totalPowerW": 80,
+        "baseline": {
+          "curve": [
+            {
+              "timeS": 0,
+              "temperatureC": 30
+            },
+            {
+              "timeS": 15,
+              "temperatureC": 33.28
+            },
+            {
+              "timeS": 30,
+              "temperatureC": 36.39
+            },
+            {
+              "timeS": 45,
+              "temperatureC": 39.32
+            },
+            {
+              "timeS": 60,
+              "temperatureC": 42.09
+            },
+            {
+              "timeS": 75,
+              "temperatureC": 44.71
+            },
+            {
+              "timeS": 90,
+              "temperatureC": 47.19
+            },
+            {
+              "timeS": 105,
+              "temperatureC": 49.54
+            },
+            {
+              "timeS": 120,
+              "temperatureC": 51.75
+            },
+            {
+              "timeS": 135,
+              "temperatureC": 53.85
+            },
+            {
+              "timeS": 150,
+              "temperatureC": 55.83
+            },
+            {
+              "timeS": 165,
+              "temperatureC": 57.7
+            },
+            {
+              "timeS": 180,
+              "temperatureC": 59.47
+            },
+            {
+              "timeS": 195,
+              "temperatureC": 61.14
+            },
+            {
+              "timeS": 210,
+              "temperatureC": 62.72
+            },
+            {
+              "timeS": 225,
+              "temperatureC": 64.22
+            },
+            {
+              "timeS": 240,
+              "temperatureC": 65.63
+            },
+            {
+              "timeS": 255,
+              "temperatureC": 66.97
+            },
+            {
+              "timeS": 270,
+              "temperatureC": 68.23
+            },
+            {
+              "timeS": 285,
+              "temperatureC": 69.43
+            },
+            {
+              "timeS": 300,
+              "temperatureC": 70.56
+            },
+            {
+              "timeS": 315,
+              "temperatureC": 71.63
+            },
+            {
+              "timeS": 330,
+              "temperatureC": 72.64
+            },
+            {
+              "timeS": 345,
+              "temperatureC": 73.59
+            },
+            {
+              "timeS": 360,
+              "temperatureC": 74.49
+            },
+            {
+              "timeS": 375,
+              "temperatureC": 75.35
+            },
+            {
+              "timeS": 390,
+              "temperatureC": 76.15
+            },
+            {
+              "timeS": 405,
+              "temperatureC": 76.92
+            },
+            {
+              "timeS": 420,
+              "temperatureC": 77.64
+            },
+            {
+              "timeS": 435,
+              "temperatureC": 78.32
+            },
+            {
+              "timeS": 450,
+              "temperatureC": 78.96
+            },
+            {
+              "timeS": 465,
+              "temperatureC": 79.57
+            },
+            {
+              "timeS": 480,
+              "temperatureC": 80.15
+            },
+            {
+              "timeS": 495,
+              "temperatureC": 80.69
+            },
+            {
+              "timeS": 510,
+              "temperatureC": 81.21
+            },
+            {
+              "timeS": 525,
+              "temperatureC": 81.69
+            },
+            {
+              "timeS": 540,
+              "temperatureC": 82.15
+            },
+            {
+              "timeS": 555,
+              "temperatureC": 82.59
+            },
+            {
+              "timeS": 570,
+              "temperatureC": 83
+            },
+            {
+              "timeS": 585,
+              "temperatureC": 83.39
+            },
+            {
+              "timeS": 600,
+              "temperatureC": 83.75
+            },
+            {
+              "timeS": 615,
+              "temperatureC": 84.1
+            },
+            {
+              "timeS": 630,
+              "temperatureC": 84.43
+            },
+            {
+              "timeS": 645,
+              "temperatureC": 84.74
+            },
+            {
+              "timeS": 660,
+              "temperatureC": 85.03
+            },
+            {
+              "timeS": 675,
+              "temperatureC": 85.31
+            },
+            {
+              "timeS": 690,
+              "temperatureC": 85.57
+            },
+            {
+              "timeS": 705,
+              "temperatureC": 85.82
+            },
+            {
+              "timeS": 720,
+              "temperatureC": 86.06
+            },
+            {
+              "timeS": 735,
+              "temperatureC": 86.28
+            },
+            {
+              "timeS": 750,
+              "temperatureC": 86.49
+            },
+            {
+              "timeS": 765,
+              "temperatureC": 86.69
+            },
+            {
+              "timeS": 780,
+              "temperatureC": 86.87
+            },
+            {
+              "timeS": 795,
+              "temperatureC": 87.05
+            },
+            {
+              "timeS": 810,
+              "temperatureC": 87.22
+            },
+            {
+              "timeS": 825,
+              "temperatureC": 87.38
+            },
+            {
+              "timeS": 840,
+              "temperatureC": 87.53
+            },
+            {
+              "timeS": 855,
+              "temperatureC": 87.67
+            },
+            {
+              "timeS": 870,
+              "temperatureC": 87.8
+            },
+            {
+              "timeS": 885,
+              "temperatureC": 87.93
+            },
+            {
+              "timeS": 900,
+              "temperatureC": 88.05
+            }
+          ],
+          "maxTemperatureC": 88.1,
+          "timeToLimitMinutes": 7.94,
+          "thermalResistanceKPerW": 0.958,
+          "effectiveCapacityJPerK": 279
+        },
+        "candidates": [
+          {
+            "curve": [
+              {
+                "timeS": 0,
+                "temperatureC": 30
+              },
+              {
+                "timeS": 15,
+                "temperatureC": 33.01
+              },
+              {
+                "timeS": 30,
+                "temperatureC": 35.82
+              },
+              {
+                "timeS": 45,
+                "temperatureC": 38.44
+              },
+              {
+                "timeS": 60,
+                "temperatureC": 40.89
+              },
+              {
+                "timeS": 75,
+                "temperatureC": 43.18
+              },
+              {
+                "timeS": 90,
+                "temperatureC": 45.32
+              },
+              {
+                "timeS": 105,
+                "temperatureC": 47.32
+              },
+              {
+                "timeS": 120,
+                "temperatureC": 49.19
+              },
+              {
+                "timeS": 135,
+                "temperatureC": 50.94
+              },
+              {
+                "timeS": 150,
+                "temperatureC": 52.57
+              },
+              {
+                "timeS": 165,
+                "temperatureC": 54.1
+              },
+              {
+                "timeS": 180,
+                "temperatureC": 55.52
+              },
+              {
+                "timeS": 195,
+                "temperatureC": 56.85
+              },
+              {
+                "timeS": 210,
+                "temperatureC": 58.09
+              },
+              {
+                "timeS": 225,
+                "temperatureC": 59.26
+              },
+              {
+                "timeS": 240,
+                "temperatureC": 60.34
+              },
+              {
+                "timeS": 255,
+                "temperatureC": 61.36
+              },
+              {
+                "timeS": 270,
+                "temperatureC": 62.3
+              },
+              {
+                "timeS": 285,
+                "temperatureC": 63.19
+              },
+              {
+                "timeS": 300,
+                "temperatureC": 64.02
+              },
+              {
+                "timeS": 315,
+                "temperatureC": 64.79
+              },
+              {
+                "timeS": 330,
+                "temperatureC": 65.51
+              },
+              {
+                "timeS": 345,
+                "temperatureC": 66.19
+              },
+              {
+                "timeS": 360,
+                "temperatureC": 66.82
+              },
+              {
+                "timeS": 375,
+                "temperatureC": 67.41
+              },
+              {
+                "timeS": 390,
+                "temperatureC": 67.96
+              },
+              {
+                "timeS": 405,
+                "temperatureC": 68.47
+              },
+              {
+                "timeS": 420,
+                "temperatureC": 68.95
+              },
+              {
+                "timeS": 435,
+                "temperatureC": 69.4
+              },
+              {
+                "timeS": 450,
+                "temperatureC": 69.82
+              },
+              {
+                "timeS": 465,
+                "temperatureC": 70.21
+              },
+              {
+                "timeS": 480,
+                "temperatureC": 70.58
+              },
+              {
+                "timeS": 495,
+                "temperatureC": 70.92
+              },
+              {
+                "timeS": 510,
+                "temperatureC": 71.24
+              },
+              {
+                "timeS": 525,
+                "temperatureC": 71.54
+              },
+              {
+                "timeS": 540,
+                "temperatureC": 71.82
+              },
+              {
+                "timeS": 555,
+                "temperatureC": 72.08
+              },
+              {
+                "timeS": 570,
+                "temperatureC": 72.32
+              },
+              {
+                "timeS": 585,
+                "temperatureC": 72.55
+              },
+              {
+                "timeS": 600,
+                "temperatureC": 72.76
+              },
+              {
+                "timeS": 615,
+                "temperatureC": 72.96
+              },
+              {
+                "timeS": 630,
+                "temperatureC": 73.15
+              },
+              {
+                "timeS": 645,
+                "temperatureC": 73.32
+              },
+              {
+                "timeS": 660,
+                "temperatureC": 73.48
+              },
+              {
+                "timeS": 675,
+                "temperatureC": 73.64
+              },
+              {
+                "timeS": 690,
+                "temperatureC": 73.78
+              },
+              {
+                "timeS": 705,
+                "temperatureC": 73.91
+              },
+              {
+                "timeS": 720,
+                "temperatureC": 74.03
+              },
+              {
+                "timeS": 735,
+                "temperatureC": 74.15
+              },
+              {
+                "timeS": 750,
+                "temperatureC": 74.26
+              },
+              {
+                "timeS": 765,
+                "temperatureC": 74.36
+              },
+              {
+                "timeS": 780,
+                "temperatureC": 74.45
+              },
+              {
+                "timeS": 795,
+                "temperatureC": 74.54
+              },
+              {
+                "timeS": 810,
+                "temperatureC": 74.62
+              },
+              {
+                "timeS": 825,
+                "temperatureC": 74.7
+              },
+              {
+                "timeS": 840,
+                "temperatureC": 74.77
+              },
+              {
+                "timeS": 855,
+                "temperatureC": 74.84
+              },
+              {
+                "timeS": 870,
+                "temperatureC": 74.9
+              },
+              {
+                "timeS": 885,
+                "temperatureC": 74.96
+              },
+              {
+                "timeS": 900,
+                "temperatureC": 75.01
+              }
+            ],
+            "maxTemperatureC": 75,
+            "timeToLimitMinutes": null,
+            "thermalResistanceKPerW": 0.747,
+            "effectiveCapacityJPerK": 295.7,
+            "solutionId": "vein-bridge",
+            "addedMassPercent": 6.8,
+            "interferenceRisk": "低",
+            "hotspotReductionC": 13.1,
+            "timeToLimitImprovementPercent": 88.9,
+            "score": 76.2,
+            "grade": "B"
+          },
+          {
+            "curve": [
+              {
+                "timeS": 0,
+                "temperatureC": 30
+              },
+              {
+                "timeS": 15,
+                "temperatureC": 32.98
+              },
+              {
+                "timeS": 30,
+                "temperatureC": 35.79
+              },
+              {
+                "timeS": 45,
+                "temperatureC": 38.43
+              },
+              {
+                "timeS": 60,
+                "temperatureC": 40.91
+              },
+              {
+                "timeS": 75,
+                "temperatureC": 43.24
+              },
+              {
+                "timeS": 90,
+                "temperatureC": 45.44
+              },
+              {
+                "timeS": 105,
+                "temperatureC": 47.5
+              },
+              {
+                "timeS": 120,
+                "temperatureC": 49.44
+              },
+              {
+                "timeS": 135,
+                "temperatureC": 51.26
+              },
+              {
+                "timeS": 150,
+                "temperatureC": 52.97
+              },
+              {
+                "timeS": 165,
+                "temperatureC": 54.59
+              },
+              {
+                "timeS": 180,
+                "temperatureC": 56.1
+              },
+              {
+                "timeS": 195,
+                "temperatureC": 57.53
+              },
+              {
+                "timeS": 210,
+                "temperatureC": 58.87
+              },
+              {
+                "timeS": 225,
+                "temperatureC": 60.13
+              },
+              {
+                "timeS": 240,
+                "temperatureC": 61.31
+              },
+              {
+                "timeS": 255,
+                "temperatureC": 62.43
+              },
+              {
+                "timeS": 270,
+                "temperatureC": 63.47
+              },
+              {
+                "timeS": 285,
+                "temperatureC": 64.46
+              },
+              {
+                "timeS": 300,
+                "temperatureC": 65.38
+              },
+              {
+                "timeS": 315,
+                "temperatureC": 66.25
+              },
+              {
+                "timeS": 330,
+                "temperatureC": 67.07
+              },
+              {
+                "timeS": 345,
+                "temperatureC": 67.84
+              },
+              {
+                "timeS": 360,
+                "temperatureC": 68.57
+              },
+              {
+                "timeS": 375,
+                "temperatureC": 69.25
+              },
+              {
+                "timeS": 390,
+                "temperatureC": 69.89
+              },
+              {
+                "timeS": 405,
+                "temperatureC": 70.49
+              },
+              {
+                "timeS": 420,
+                "temperatureC": 71.05
+              },
+              {
+                "timeS": 435,
+                "temperatureC": 71.59
+              },
+              {
+                "timeS": 450,
+                "temperatureC": 72.09
+              },
+              {
+                "timeS": 465,
+                "temperatureC": 72.56
+              },
+              {
+                "timeS": 480,
+                "temperatureC": 73
+              },
+              {
+                "timeS": 495,
+                "temperatureC": 73.42
+              },
+              {
+                "timeS": 510,
+                "temperatureC": 73.81
+              },
+              {
+                "timeS": 525,
+                "temperatureC": 74.17
+              },
+              {
+                "timeS": 540,
+                "temperatureC": 74.52
+              },
+              {
+                "timeS": 555,
+                "temperatureC": 74.84
+              },
+              {
+                "timeS": 570,
+                "temperatureC": 75.15
+              },
+              {
+                "timeS": 585,
+                "temperatureC": 75.44
+              },
+              {
+                "timeS": 600,
+                "temperatureC": 75.71
+              },
+              {
+                "timeS": 615,
+                "temperatureC": 75.96
+              },
+              {
+                "timeS": 630,
+                "temperatureC": 76.2
+              },
+              {
+                "timeS": 645,
+                "temperatureC": 76.42
+              },
+              {
+                "timeS": 660,
+                "temperatureC": 76.64
+              },
+              {
+                "timeS": 675,
+                "temperatureC": 76.83
+              },
+              {
+                "timeS": 690,
+                "temperatureC": 77.02
+              },
+              {
+                "timeS": 705,
+                "temperatureC": 77.2
+              },
+              {
+                "timeS": 720,
+                "temperatureC": 77.36
+              },
+              {
+                "timeS": 735,
+                "temperatureC": 77.52
+              },
+              {
+                "timeS": 750,
+                "temperatureC": 77.66
+              },
+              {
+                "timeS": 765,
+                "temperatureC": 77.8
+              },
+              {
+                "timeS": 780,
+                "temperatureC": 77.93
+              },
+              {
+                "timeS": 795,
+                "temperatureC": 78.05
+              },
+              {
+                "timeS": 810,
+                "temperatureC": 78.16
+              },
+              {
+                "timeS": 825,
+                "temperatureC": 78.27
+              },
+              {
+                "timeS": 840,
+                "temperatureC": 78.37
+              },
+              {
+                "timeS": 855,
+                "temperatureC": 78.47
+              },
+              {
+                "timeS": 870,
+                "temperatureC": 78.56
+              },
+              {
+                "timeS": 885,
+                "temperatureC": 78.64
+              },
+              {
+                "timeS": 900,
+                "temperatureC": 78.72
+              }
+            ],
+            "maxTemperatureC": 78.7,
+            "timeToLimitMinutes": null,
+            "thermalResistanceKPerW": 0.808,
+            "effectiveCapacityJPerK": 301.3,
+            "solutionId": "pin-fin",
+            "addedMassPercent": 7.6,
+            "interferenceRisk": "中",
+            "hotspotReductionC": 9.4,
+            "timeToLimitImprovementPercent": 88.9,
+            "score": 65.1,
+            "grade": "B"
+          },
+          {
+            "curve": [
+              {
+                "timeS": 0,
+                "temperatureC": 30
+              },
+              {
+                "timeS": 15,
+                "temperatureC": 33.2
+              },
+              {
+                "timeS": 30,
+                "temperatureC": 36.22
+              },
+              {
+                "timeS": 45,
+                "temperatureC": 39.07
+              },
+              {
+                "timeS": 60,
+                "temperatureC": 41.76
+              },
+              {
+                "timeS": 75,
+                "temperatureC": 44.3
+              },
+              {
+                "timeS": 90,
+                "temperatureC": 46.7
+              },
+              {
+                "timeS": 105,
+                "temperatureC": 48.96
+              },
+              {
+                "timeS": 120,
+                "temperatureC": 51.09
+              },
+              {
+                "timeS": 135,
+                "temperatureC": 53.11
+              },
+              {
+                "timeS": 150,
+                "temperatureC": 55.01
+              },
+              {
+                "timeS": 165,
+                "temperatureC": 56.8
+              },
+              {
+                "timeS": 180,
+                "temperatureC": 58.49
+              },
+              {
+                "timeS": 195,
+                "temperatureC": 60.09
+              },
+              {
+                "timeS": 210,
+                "temperatureC": 61.6
+              },
+              {
+                "timeS": 225,
+                "temperatureC": 63.02
+              },
+              {
+                "timeS": 240,
+                "temperatureC": 64.36
+              },
+              {
+                "timeS": 255,
+                "temperatureC": 65.63
+              },
+              {
+                "timeS": 270,
+                "temperatureC": 66.82
+              },
+              {
+                "timeS": 285,
+                "temperatureC": 67.95
+              },
+              {
+                "timeS": 300,
+                "temperatureC": 69.02
+              },
+              {
+                "timeS": 315,
+                "temperatureC": 70.02
+              },
+              {
+                "timeS": 330,
+                "temperatureC": 70.97
+              },
+              {
+                "timeS": 345,
+                "temperatureC": 71.86
+              },
+              {
+                "timeS": 360,
+                "temperatureC": 72.71
+              },
+              {
+                "timeS": 375,
+                "temperatureC": 73.5
+              },
+              {
+                "timeS": 390,
+                "temperatureC": 74.26
+              },
+              {
+                "timeS": 405,
+                "temperatureC": 74.97
+              },
+              {
+                "timeS": 420,
+                "temperatureC": 75.64
+              },
+              {
+                "timeS": 435,
+                "temperatureC": 76.27
+              },
+              {
+                "timeS": 450,
+                "temperatureC": 76.86
+              },
+              {
+                "timeS": 465,
+                "temperatureC": 77.43
+              },
+              {
+                "timeS": 480,
+                "temperatureC": 77.96
+              },
+              {
+                "timeS": 495,
+                "temperatureC": 78.46
+              },
+              {
+                "timeS": 510,
+                "temperatureC": 78.93
+              },
+              {
+                "timeS": 525,
+                "temperatureC": 79.38
+              },
+              {
+                "timeS": 540,
+                "temperatureC": 79.8
+              },
+              {
+                "timeS": 555,
+                "temperatureC": 80.2
+              },
+              {
+                "timeS": 570,
+                "temperatureC": 80.57
+              },
+              {
+                "timeS": 585,
+                "temperatureC": 80.93
+              },
+              {
+                "timeS": 600,
+                "temperatureC": 81.26
+              },
+              {
+                "timeS": 615,
+                "temperatureC": 81.58
+              },
+              {
+                "timeS": 630,
+                "temperatureC": 81.87
+              },
+              {
+                "timeS": 645,
+                "temperatureC": 82.15
+              },
+              {
+                "timeS": 660,
+                "temperatureC": 82.42
+              },
+              {
+                "timeS": 675,
+                "temperatureC": 82.67
+              },
+              {
+                "timeS": 690,
+                "temperatureC": 82.91
+              },
+              {
+                "timeS": 705,
+                "temperatureC": 83.13
+              },
+              {
+                "timeS": 720,
+                "temperatureC": 83.34
+              },
+              {
+                "timeS": 735,
+                "temperatureC": 83.54
+              },
+              {
+                "timeS": 750,
+                "temperatureC": 83.72
+              },
+              {
+                "timeS": 765,
+                "temperatureC": 83.9
+              },
+              {
+                "timeS": 780,
+                "temperatureC": 84.07
+              },
+              {
+                "timeS": 795,
+                "temperatureC": 84.23
+              },
+              {
+                "timeS": 810,
+                "temperatureC": 84.37
+              },
+              {
+                "timeS": 825,
+                "temperatureC": 84.51
+              },
+              {
+                "timeS": 840,
+                "temperatureC": 84.65
+              },
+              {
+                "timeS": 855,
+                "temperatureC": 84.77
+              },
+              {
+                "timeS": 870,
+                "temperatureC": 84.89
+              },
+              {
+                "timeS": 885,
+                "temperatureC": 85
+              },
+              {
+                "timeS": 900,
+                "temperatureC": 85.1
+              }
+            ],
+            "maxTemperatureC": 85.1,
+            "timeToLimitMinutes": 9.13,
+            "thermalResistanceKPerW": 0.91,
+            "effectiveCapacityJPerK": 284.6,
+            "solutionId": "flat-baseline",
+            "addedMassPercent": 2.2,
+            "interferenceRisk": "低",
+            "hotspotReductionC": 3,
+            "timeToLimitImprovementPercent": 15,
+            "score": 49.2,
+            "grade": "C"
+          },
+          {
+            "curve": [
+              {
+                "timeS": 0,
+                "temperatureC": 30
+              },
+              {
+                "timeS": 15,
+                "temperatureC": 32.89
+              },
+              {
+                "timeS": 30,
+                "temperatureC": 35.62
+              },
+              {
+                "timeS": 45,
+                "temperatureC": 38.2
+              },
+              {
+                "timeS": 60,
+                "temperatureC": 40.63
+              },
+              {
+                "timeS": 75,
+                "temperatureC": 42.92
+              },
+              {
+                "timeS": 90,
+                "temperatureC": 45.09
+              },
+              {
+                "timeS": 105,
+                "temperatureC": 47.13
+              },
+              {
+                "timeS": 120,
+                "temperatureC": 49.06
+              },
+              {
+                "timeS": 135,
+                "temperatureC": 50.88
+              },
+              {
+                "timeS": 150,
+                "temperatureC": 52.6
+              },
+              {
+                "timeS": 165,
+                "temperatureC": 54.23
+              },
+              {
+                "timeS": 180,
+                "temperatureC": 55.76
+              },
+              {
+                "timeS": 195,
+                "temperatureC": 57.2
+              },
+              {
+                "timeS": 210,
+                "temperatureC": 58.57
+              },
+              {
+                "timeS": 225,
+                "temperatureC": 59.86
+              },
+              {
+                "timeS": 240,
+                "temperatureC": 61.07
+              },
+              {
+                "timeS": 255,
+                "temperatureC": 62.22
+              },
+              {
+                "timeS": 270,
+                "temperatureC": 63.3
+              },
+              {
+                "timeS": 285,
+                "temperatureC": 64.33
+              },
+              {
+                "timeS": 300,
+                "temperatureC": 65.29
+              },
+              {
+                "timeS": 315,
+                "temperatureC": 66.2
+              },
+              {
+                "timeS": 330,
+                "temperatureC": 67.06
+              },
+              {
+                "timeS": 345,
+                "temperatureC": 67.87
+              },
+              {
+                "timeS": 360,
+                "temperatureC": 68.64
+              },
+              {
+                "timeS": 375,
+                "temperatureC": 69.36
+              },
+              {
+                "timeS": 390,
+                "temperatureC": 70.04
+              },
+              {
+                "timeS": 405,
+                "temperatureC": 70.69
+              },
+              {
+                "timeS": 420,
+                "temperatureC": 71.3
+              },
+              {
+                "timeS": 435,
+                "temperatureC": 71.87
+              },
+              {
+                "timeS": 450,
+                "temperatureC": 72.41
+              },
+              {
+                "timeS": 465,
+                "temperatureC": 72.92
+              },
+              {
+                "timeS": 480,
+                "temperatureC": 73.41
+              },
+              {
+                "timeS": 495,
+                "temperatureC": 73.86
+              },
+              {
+                "timeS": 510,
+                "temperatureC": 74.29
+              },
+              {
+                "timeS": 525,
+                "temperatureC": 74.7
+              },
+              {
+                "timeS": 540,
+                "temperatureC": 75.08
+              },
+              {
+                "timeS": 555,
+                "temperatureC": 75.44
+              },
+              {
+                "timeS": 570,
+                "temperatureC": 75.78
+              },
+              {
+                "timeS": 585,
+                "temperatureC": 76.1
+              },
+              {
+                "timeS": 600,
+                "temperatureC": 76.41
+              },
+              {
+                "timeS": 615,
+                "temperatureC": 76.7
+              },
+              {
+                "timeS": 630,
+                "temperatureC": 76.97
+              },
+              {
+                "timeS": 645,
+                "temperatureC": 77.22
+              },
+              {
+                "timeS": 660,
+                "temperatureC": 77.46
+              },
+              {
+                "timeS": 675,
+                "temperatureC": 77.69
+              },
+              {
+                "timeS": 690,
+                "temperatureC": 77.91
+              },
+              {
+                "timeS": 705,
+                "temperatureC": 78.11
+              },
+              {
+                "timeS": 720,
+                "temperatureC": 78.3
+              },
+              {
+                "timeS": 735,
+                "temperatureC": 78.48
+              },
+              {
+                "timeS": 750,
+                "temperatureC": 78.65
+              },
+              {
+                "timeS": 765,
+                "temperatureC": 78.81
+              },
+              {
+                "timeS": 780,
+                "temperatureC": 78.97
+              },
+              {
+                "timeS": 795,
+                "temperatureC": 79.11
+              },
+              {
+                "timeS": 810,
+                "temperatureC": 79.24
+              },
+              {
+                "timeS": 825,
+                "temperatureC": 79.37
+              },
+              {
+                "timeS": 840,
+                "temperatureC": 79.49
+              },
+              {
+                "timeS": 855,
+                "temperatureC": 79.61
+              },
+              {
+                "timeS": 870,
+                "temperatureC": 79.71
+              },
+              {
+                "timeS": 885,
+                "temperatureC": 79.82
+              },
+              {
+                "timeS": 900,
+                "temperatureC": 79.91
+              }
+            ],
+            "maxTemperatureC": 79.9,
+            "timeToLimitMinutes": null,
+            "thermalResistanceKPerW": 0.831,
+            "effectiveCapacityJPerK": 312.5,
+            "solutionId": "gyroid",
+            "addedMassPercent": 9.6,
+            "interferenceRisk": "中",
+            "hotspotReductionC": 8.2,
+            "timeToLimitImprovementPercent": 88.9,
+            "score": 35.9,
+            "grade": "D"
+          }
+        ],
+        "recommendedSolutionId": "vein-bridge",
+        "riskLevel": "High",
+        "warnings": [
+          "当前结果为工程估算，不等同于 CFD/FEA 或认证测试结果。",
+          "上传实测 CSV 可用真实温升曲线校准模型。"
+        ]
+      }
+    },
+    {
+      "name": "high-power-estimate",
+      "generatedAt": "2026-07-11T00:00:00.000Z",
+      "request": {
+        "hardwareId": "robot-joint",
+        "jointId": "knee",
+        "heatSources": {
+          "motor-winding": 100,
+          "mosfet": 40
+        },
+        "constraints": [
+          "sealed-case",
+          "warranty-seal",
+          "motor-untouched",
+          "reducer-untouched",
+          "cable-clearance",
+          "bearing-clearance",
+          "weight-limit"
+        ],
+        "optimizationGoals": [
+          "delay-limit",
+          "lower-hotspot",
+          "weight-limit",
+          "original-structure"
+        ],
+        "inputs": {
+          "ambientTemperatureC": 25,
+          "initialTemperatureC": 30,
+          "thermalLimitC": 80,
+          "durationMinutes": 30,
+          "dutyCyclePercent": 85,
+          "airflowMps": 1.2,
+          "componentMassKg": 1.8
+        },
+        "measurements": []
+      },
+      "expected": {
+        "id": "analysis-2026-07-11T00:00:00.000Z",
+        "generatedAt": "2026-07-11T00:00:00.000Z",
+        "source": "engineering-estimate",
+        "methodLabel": "一阶集总参数 RC 工程估算",
+        "totalPowerW": 140,
+        "baseline": {
+          "curve": [
+            {
+              "timeS": 0,
+              "temperatureC": 30
+            },
+            {
+              "timeS": 30,
+              "temperatureC": 41.05
+            },
+            {
+              "timeS": 60,
+              "temperatureC": 50.43
+            },
+            {
+              "timeS": 90,
+              "temperatureC": 58.39
+            },
+            {
+              "timeS": 120,
+              "temperatureC": 65.16
+            },
+            {
+              "timeS": 150,
+              "temperatureC": 70.9
+            },
+            {
+              "timeS": 180,
+              "temperatureC": 75.77
+            },
+            {
+              "timeS": 210,
+              "temperatureC": 79.91
+            },
+            {
+              "timeS": 240,
+              "temperatureC": 83.42
+            },
+            {
+              "timeS": 270,
+              "temperatureC": 86.41
+            },
+            {
+              "timeS": 300,
+              "temperatureC": 88.94
+            },
+            {
+              "timeS": 330,
+              "temperatureC": 91.09
+            },
+            {
+              "timeS": 360,
+              "temperatureC": 92.91
+            },
+            {
+              "timeS": 390,
+              "temperatureC": 94.46
+            },
+            {
+              "timeS": 420,
+              "temperatureC": 95.78
+            },
+            {
+              "timeS": 450,
+              "temperatureC": 96.9
+            },
+            {
+              "timeS": 480,
+              "temperatureC": 97.85
+            },
+            {
+              "timeS": 510,
+              "temperatureC": 98.65
+            },
+            {
+              "timeS": 540,
+              "temperatureC": 99.33
+            },
+            {
+              "timeS": 570,
+              "temperatureC": 99.92
+            },
+            {
+              "timeS": 600,
+              "temperatureC": 100.41
+            },
+            {
+              "timeS": 630,
+              "temperatureC": 100.83
+            },
+            {
+              "timeS": 660,
+              "temperatureC": 101.18
+            },
+            {
+              "timeS": 690,
+              "temperatureC": 101.48
+            },
+            {
+              "timeS": 720,
+              "temperatureC": 101.74
+            },
+            {
+              "timeS": 750,
+              "temperatureC": 101.96
+            },
+            {
+              "timeS": 780,
+              "temperatureC": 102.14
+            },
+            {
+              "timeS": 810,
+              "temperatureC": 102.3
+            },
+            {
+              "timeS": 840,
+              "temperatureC": 102.43
+            },
+            {
+              "timeS": 870,
+              "temperatureC": 102.54
+            },
+            {
+              "timeS": 900,
+              "temperatureC": 102.64
+            },
+            {
+              "timeS": 930,
+              "temperatureC": 102.72
+            },
+            {
+              "timeS": 960,
+              "temperatureC": 102.79
+            },
+            {
+              "timeS": 990,
+              "temperatureC": 102.85
+            },
+            {
+              "timeS": 1020,
+              "temperatureC": 102.9
+            },
+            {
+              "timeS": 1050,
+              "temperatureC": 102.94
+            },
+            {
+              "timeS": 1080,
+              "temperatureC": 102.98
+            },
+            {
+              "timeS": 1110,
+              "temperatureC": 103.01
+            },
+            {
+              "timeS": 1140,
+              "temperatureC": 103.03
+            },
+            {
+              "timeS": 1170,
+              "temperatureC": 103.06
+            },
+            {
+              "timeS": 1200,
+              "temperatureC": 103.08
+            },
+            {
+              "timeS": 1230,
+              "temperatureC": 103.09
+            },
+            {
+              "timeS": 1260,
+              "temperatureC": 103.1
+            },
+            {
+              "timeS": 1290,
+              "temperatureC": 103.12
+            },
+            {
+              "timeS": 1320,
+              "temperatureC": 103.13
+            },
+            {
+              "timeS": 1350,
+              "temperatureC": 103.13
+            },
+            {
+              "timeS": 1380,
+              "temperatureC": 103.14
+            },
+            {
+              "timeS": 1410,
+              "temperatureC": 103.15
+            },
+            {
+              "timeS": 1440,
+              "temperatureC": 103.15
+            },
+            {
+              "timeS": 1470,
+              "temperatureC": 103.16
+            },
+            {
+              "timeS": 1500,
+              "temperatureC": 103.16
+            },
+            {
+              "timeS": 1530,
+              "temperatureC": 103.16
+            },
+            {
+              "timeS": 1560,
+              "temperatureC": 103.17
+            },
+            {
+              "timeS": 1590,
+              "temperatureC": 103.17
+            },
+            {
+              "timeS": 1620,
+              "temperatureC": 103.17
+            },
+            {
+              "timeS": 1650,
+              "temperatureC": 103.17
+            },
+            {
+              "timeS": 1680,
+              "temperatureC": 103.17
+            },
+            {
+              "timeS": 1710,
+              "temperatureC": 103.17
+            },
+            {
+              "timeS": 1740,
+              "temperatureC": 103.17
+            },
+            {
+              "timeS": 1770,
+              "temperatureC": 103.18
+            },
+            {
+              "timeS": 1800,
+              "temperatureC": 103.18
+            }
+          ],
+          "maxTemperatureC": 103.2,
+          "timeToLimitMinutes": 3.51,
+          "thermalResistanceKPerW": 0.657,
+          "effectiveCapacityJPerK": 279
+        },
+        "candidates": [
+          {
+            "curve": [
+              {
+                "timeS": 0,
+                "temperatureC": 30
+              },
+              {
+                "timeS": 30,
+                "temperatureC": 40.05
+              },
+              {
+                "timeS": 60,
+                "temperatureC": 48.3
+              },
+              {
+                "timeS": 90,
+                "temperatureC": 55.07
+              },
+              {
+                "timeS": 120,
+                "temperatureC": 60.62
+              },
+              {
+                "timeS": 150,
+                "temperatureC": 65.17
+              },
+              {
+                "timeS": 180,
+                "temperatureC": 68.91
+              },
+              {
+                "timeS": 210,
+                "temperatureC": 71.98
+              },
+              {
+                "timeS": 240,
+                "temperatureC": 74.49
+              },
+              {
+                "timeS": 270,
+                "temperatureC": 76.56
+              },
+              {
+                "timeS": 300,
+                "temperatureC": 78.25
+              },
+              {
+                "timeS": 330,
+                "temperatureC": 79.64
+              },
+              {
+                "timeS": 360,
+                "temperatureC": 80.78
+              },
+              {
+                "timeS": 390,
+                "temperatureC": 81.71
+              },
+              {
+                "timeS": 420,
+                "temperatureC": 82.48
+              },
+              {
+                "timeS": 450,
+                "temperatureC": 83.11
+              },
+              {
+                "timeS": 480,
+                "temperatureC": 83.62
+              },
+              {
+                "timeS": 510,
+                "temperatureC": 84.05
+              },
+              {
+                "timeS": 540,
+                "temperatureC": 84.39
+              },
+              {
+                "timeS": 570,
+                "temperatureC": 84.68
+              },
+              {
+                "timeS": 600,
+                "temperatureC": 84.91
+              },
+              {
+                "timeS": 630,
+                "temperatureC": 85.1
+              },
+              {
+                "timeS": 660,
+                "temperatureC": 85.26
+              },
+              {
+                "timeS": 690,
+                "temperatureC": 85.39
+              },
+              {
+                "timeS": 720,
+                "temperatureC": 85.5
+              },
+              {
+                "timeS": 750,
+                "temperatureC": 85.58
+              },
+              {
+                "timeS": 780,
+                "temperatureC": 85.65
+              },
+              {
+                "timeS": 810,
+                "temperatureC": 85.71
+              },
+              {
+                "timeS": 840,
+                "temperatureC": 85.76
+              },
+              {
+                "timeS": 870,
+                "temperatureC": 85.8
+              },
+              {
+                "timeS": 900,
+                "temperatureC": 85.83
+              },
+              {
+                "timeS": 930,
+                "temperatureC": 85.86
+              },
+              {
+                "timeS": 960,
+                "temperatureC": 85.88
+              },
+              {
+                "timeS": 990,
+                "temperatureC": 85.9
+              },
+              {
+                "timeS": 1020,
+                "temperatureC": 85.91
+              },
+              {
+                "timeS": 1050,
+                "temperatureC": 85.93
+              },
+              {
+                "timeS": 1080,
+                "temperatureC": 85.94
+              },
+              {
+                "timeS": 1110,
+                "temperatureC": 85.94
+              },
+              {
+                "timeS": 1140,
+                "temperatureC": 85.95
+              },
+              {
+                "timeS": 1170,
+                "temperatureC": 85.96
+              },
+              {
+                "timeS": 1200,
+                "temperatureC": 85.96
+              },
+              {
+                "timeS": 1230,
+                "temperatureC": 85.96
+              },
+              {
+                "timeS": 1260,
+                "temperatureC": 85.97
+              },
+              {
+                "timeS": 1290,
+                "temperatureC": 85.97
+              },
+              {
+                "timeS": 1320,
+                "temperatureC": 85.97
+              },
+              {
+                "timeS": 1350,
+                "temperatureC": 85.97
+              },
+              {
+                "timeS": 1380,
+                "temperatureC": 85.97
+              },
+              {
+                "timeS": 1410,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1440,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1470,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1500,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1530,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1560,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1590,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1620,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1650,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1680,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1710,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1740,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1770,
+                "temperatureC": 85.98
+              },
+              {
+                "timeS": 1800,
+                "temperatureC": 85.98
+              }
+            ],
+            "maxTemperatureC": 86,
+            "timeToLimitMinutes": 5.66,
+            "thermalResistanceKPerW": 0.512,
+            "effectiveCapacityJPerK": 295.7,
+            "solutionId": "vein-bridge",
+            "addedMassPercent": 6.8,
+            "interferenceRisk": "低",
+            "hotspotReductionC": 17.2,
+            "timeToLimitImprovementPercent": 61.3,
+            "score": 77.1,
+            "grade": "B"
+          },
+          {
+            "curve": [
+              {
+                "timeS": 0,
+                "temperatureC": 30
+              },
+              {
+                "timeS": 30,
+                "temperatureC": 39.78
+              },
+              {
+                "timeS": 60,
+                "temperatureC": 47.74
+              },
+              {
+                "timeS": 90,
+                "temperatureC": 54.21
+              },
+              {
+                "timeS": 120,
+                "temperatureC": 59.48
+              },
+              {
+                "timeS": 150,
+                "temperatureC": 63.77
+              },
+              {
+                "timeS": 180,
+                "temperatureC": 67.27
+              },
+              {
+                "timeS": 210,
+                "temperatureC": 70.11
+              },
+              {
+                "timeS": 240,
+                "temperatureC": 72.42
+              },
+              {
+                "timeS": 270,
+                "temperatureC": 74.31
+              },
+              {
+                "timeS": 300,
+                "temperatureC": 75.84
+              },
+              {
+                "timeS": 330,
+                "temperatureC": 77.09
+              },
+              {
+                "timeS": 360,
+                "temperatureC": 78.1
+              },
+              {
+                "timeS": 390,
+                "temperatureC": 78.93
+              },
+              {
+                "timeS": 420,
+                "temperatureC": 79.6
+              },
+              {
+                "timeS": 450,
+                "temperatureC": 80.15
+              },
+              {
+                "timeS": 480,
+                "temperatureC": 80.59
+              },
+              {
+                "timeS": 510,
+                "temperatureC": 80.95
+              },
+              {
+                "timeS": 540,
+                "temperatureC": 81.25
+              },
+              {
+                "timeS": 570,
+                "temperatureC": 81.49
+              },
+              {
+                "timeS": 600,
+                "temperatureC": 81.69
+              },
+              {
+                "timeS": 630,
+                "temperatureC": 81.84
+              },
+              {
+                "timeS": 660,
+                "temperatureC": 81.97
+              },
+              {
+                "timeS": 690,
+                "temperatureC": 82.08
+              },
+              {
+                "timeS": 720,
+                "temperatureC": 82.17
+              },
+              {
+                "timeS": 750,
+                "temperatureC": 82.24
+              },
+              {
+                "timeS": 780,
+                "temperatureC": 82.29
+              },
+              {
+                "timeS": 810,
+                "temperatureC": 82.34
+              },
+              {
+                "timeS": 840,
+                "temperatureC": 82.38
+              },
+              {
+                "timeS": 870,
+                "temperatureC": 82.41
+              },
+              {
+                "timeS": 900,
+                "temperatureC": 82.43
+              },
+              {
+                "timeS": 930,
+                "temperatureC": 82.45
+              },
+              {
+                "timeS": 960,
+                "temperatureC": 82.47
+              },
+              {
+                "timeS": 990,
+                "temperatureC": 82.48
+              },
+              {
+                "timeS": 1020,
+                "temperatureC": 82.49
+              },
+              {
+                "timeS": 1050,
+                "temperatureC": 82.5
+              },
+              {
+                "timeS": 1080,
+                "temperatureC": 82.51
+              },
+              {
+                "timeS": 1110,
+                "temperatureC": 82.51
+              },
+              {
+                "timeS": 1140,
+                "temperatureC": 82.52
+              },
+              {
+                "timeS": 1170,
+                "temperatureC": 82.52
+              },
+              {
+                "timeS": 1200,
+                "temperatureC": 82.53
+              },
+              {
+                "timeS": 1230,
+                "temperatureC": 82.53
+              },
+              {
+                "timeS": 1260,
+                "temperatureC": 82.53
+              },
+              {
+                "timeS": 1290,
+                "temperatureC": 82.53
+              },
+              {
+                "timeS": 1320,
+                "temperatureC": 82.53
+              },
+              {
+                "timeS": 1350,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1380,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1410,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1440,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1470,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1500,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1530,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1560,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1590,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1620,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1650,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1680,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1710,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1740,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1770,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 1800,
+                "temperatureC": 82.54
+              }
+            ],
+            "maxTemperatureC": 82.5,
+            "timeToLimitMinutes": 7.36,
+            "thermalResistanceKPerW": 0.484,
+            "effectiveCapacityJPerK": 301.3,
+            "solutionId": "pin-fin",
+            "addedMassPercent": 7.6,
+            "interferenceRisk": "中",
+            "hotspotReductionC": 20.7,
+            "timeToLimitImprovementPercent": 109.7,
+            "score": 73.1,
+            "grade": "B"
+          },
+          {
+            "curve": [
+              {
+                "timeS": 0,
+                "temperatureC": 30
+              },
+              {
+                "timeS": 30,
+                "temperatureC": 40.77
+              },
+              {
+                "timeS": 60,
+                "temperatureC": 49.86
+              },
+              {
+                "timeS": 90,
+                "temperatureC": 57.54
+              },
+              {
+                "timeS": 120,
+                "temperatureC": 64.02
+              },
+              {
+                "timeS": 150,
+                "temperatureC": 69.5
+              },
+              {
+                "timeS": 180,
+                "temperatureC": 74.13
+              },
+              {
+                "timeS": 210,
+                "temperatureC": 78.04
+              },
+              {
+                "timeS": 240,
+                "temperatureC": 81.34
+              },
+              {
+                "timeS": 270,
+                "temperatureC": 84.12
+              },
+              {
+                "timeS": 300,
+                "temperatureC": 86.48
+              },
+              {
+                "timeS": 330,
+                "temperatureC": 88.47
+              },
+              {
+                "timeS": 360,
+                "temperatureC": 90.14
+              },
+              {
+                "timeS": 390,
+                "temperatureC": 91.56
+              },
+              {
+                "timeS": 420,
+                "temperatureC": 92.76
+              },
+              {
+                "timeS": 450,
+                "temperatureC": 93.77
+              },
+              {
+                "timeS": 480,
+                "temperatureC": 94.63
+              },
+              {
+                "timeS": 510,
+                "temperatureC": 95.35
+              },
+              {
+                "timeS": 540,
+                "temperatureC": 95.96
+              },
+              {
+                "timeS": 570,
+                "temperatureC": 96.47
+              },
+              {
+                "timeS": 600,
+                "temperatureC": 96.91
+              },
+              {
+                "timeS": 630,
+                "temperatureC": 97.28
+              },
+              {
+                "timeS": 660,
+                "temperatureC": 97.59
+              },
+              {
+                "timeS": 690,
+                "temperatureC": 97.85
+              },
+              {
+                "timeS": 720,
+                "temperatureC": 98.07
+              },
+              {
+                "timeS": 750,
+                "temperatureC": 98.26
+              },
+              {
+                "timeS": 780,
+                "temperatureC": 98.41
+              },
+              {
+                "timeS": 810,
+                "temperatureC": 98.55
+              },
+              {
+                "timeS": 840,
+                "temperatureC": 98.66
+              },
+              {
+                "timeS": 870,
+                "temperatureC": 98.75
+              },
+              {
+                "timeS": 900,
+                "temperatureC": 98.83
+              },
+              {
+                "timeS": 930,
+                "temperatureC": 98.9
+              },
+              {
+                "timeS": 960,
+                "temperatureC": 98.96
+              },
+              {
+                "timeS": 990,
+                "temperatureC": 99.01
+              },
+              {
+                "timeS": 1020,
+                "temperatureC": 99.05
+              },
+              {
+                "timeS": 1050,
+                "temperatureC": 99.08
+              },
+              {
+                "timeS": 1080,
+                "temperatureC": 99.11
+              },
+              {
+                "timeS": 1110,
+                "temperatureC": 99.14
+              },
+              {
+                "timeS": 1140,
+                "temperatureC": 99.16
+              },
+              {
+                "timeS": 1170,
+                "temperatureC": 99.18
+              },
+              {
+                "timeS": 1200,
+                "temperatureC": 99.19
+              },
+              {
+                "timeS": 1230,
+                "temperatureC": 99.2
+              },
+              {
+                "timeS": 1260,
+                "temperatureC": 99.21
+              },
+              {
+                "timeS": 1290,
+                "temperatureC": 99.22
+              },
+              {
+                "timeS": 1320,
+                "temperatureC": 99.23
+              },
+              {
+                "timeS": 1350,
+                "temperatureC": 99.24
+              },
+              {
+                "timeS": 1380,
+                "temperatureC": 99.24
+              },
+              {
+                "timeS": 1410,
+                "temperatureC": 99.25
+              },
+              {
+                "timeS": 1440,
+                "temperatureC": 99.25
+              },
+              {
+                "timeS": 1470,
+                "temperatureC": 99.25
+              },
+              {
+                "timeS": 1500,
+                "temperatureC": 99.26
+              },
+              {
+                "timeS": 1530,
+                "temperatureC": 99.26
+              },
+              {
+                "timeS": 1560,
+                "temperatureC": 99.26
+              },
+              {
+                "timeS": 1590,
+                "temperatureC": 99.26
+              },
+              {
+                "timeS": 1620,
+                "temperatureC": 99.26
+              },
+              {
+                "timeS": 1650,
+                "temperatureC": 99.26
+              },
+              {
+                "timeS": 1680,
+                "temperatureC": 99.27
+              },
+              {
+                "timeS": 1710,
+                "temperatureC": 99.27
+              },
+              {
+                "timeS": 1740,
+                "temperatureC": 99.27
+              },
+              {
+                "timeS": 1770,
+                "temperatureC": 99.27
+              },
+              {
+                "timeS": 1800,
+                "temperatureC": 99.27
+              }
+            ],
+            "maxTemperatureC": 99.3,
+            "timeToLimitMinutes": 3.8,
+            "thermalResistanceKPerW": 0.624,
+            "effectiveCapacityJPerK": 284.6,
+            "solutionId": "flat-baseline",
+            "addedMassPercent": 2.2,
+            "interferenceRisk": "低",
+            "hotspotReductionC": 3.9,
+            "timeToLimitImprovementPercent": 8.3,
+            "score": 45.9,
+            "grade": "D"
+          },
+          {
+            "curve": [
+              {
+                "timeS": 0,
+                "temperatureC": 30
+              },
+              {
+                "timeS": 30,
+                "temperatureC": 39.48
+              },
+              {
+                "timeS": 60,
+                "temperatureC": 47.26
+              },
+              {
+                "timeS": 90,
+                "temperatureC": 53.65
+              },
+              {
+                "timeS": 120,
+                "temperatureC": 58.9
+              },
+              {
+                "timeS": 150,
+                "temperatureC": 63.21
+              },
+              {
+                "timeS": 180,
+                "temperatureC": 66.75
+              },
+              {
+                "timeS": 210,
+                "temperatureC": 69.66
+              },
+              {
+                "timeS": 240,
+                "temperatureC": 72.04
+              },
+              {
+                "timeS": 270,
+                "temperatureC": 74
+              },
+              {
+                "timeS": 300,
+                "temperatureC": 75.61
+              },
+              {
+                "timeS": 330,
+                "temperatureC": 76.94
+              },
+              {
+                "timeS": 360,
+                "temperatureC": 78.02
+              },
+              {
+                "timeS": 390,
+                "temperatureC": 78.91
+              },
+              {
+                "timeS": 420,
+                "temperatureC": 79.65
+              },
+              {
+                "timeS": 450,
+                "temperatureC": 80.25
+              },
+              {
+                "timeS": 480,
+                "temperatureC": 80.74
+              },
+              {
+                "timeS": 510,
+                "temperatureC": 81.15
+              },
+              {
+                "timeS": 540,
+                "temperatureC": 81.48
+              },
+              {
+                "timeS": 570,
+                "temperatureC": 81.75
+              },
+              {
+                "timeS": 600,
+                "temperatureC": 81.98
+              },
+              {
+                "timeS": 630,
+                "temperatureC": 82.16
+              },
+              {
+                "timeS": 660,
+                "temperatureC": 82.31
+              },
+              {
+                "timeS": 690,
+                "temperatureC": 82.44
+              },
+              {
+                "timeS": 720,
+                "temperatureC": 82.54
+              },
+              {
+                "timeS": 750,
+                "temperatureC": 82.62
+              },
+              {
+                "timeS": 780,
+                "temperatureC": 82.69
+              },
+              {
+                "timeS": 810,
+                "temperatureC": 82.75
+              },
+              {
+                "timeS": 840,
+                "temperatureC": 82.8
+              },
+              {
+                "timeS": 870,
+                "temperatureC": 82.83
+              },
+              {
+                "timeS": 900,
+                "temperatureC": 82.87
+              },
+              {
+                "timeS": 930,
+                "temperatureC": 82.89
+              },
+              {
+                "timeS": 960,
+                "temperatureC": 82.91
+              },
+              {
+                "timeS": 990,
+                "temperatureC": 82.93
+              },
+              {
+                "timeS": 1020,
+                "temperatureC": 82.94
+              },
+              {
+                "timeS": 1050,
+                "temperatureC": 82.96
+              },
+              {
+                "timeS": 1080,
+                "temperatureC": 82.97
+              },
+              {
+                "timeS": 1110,
+                "temperatureC": 82.97
+              },
+              {
+                "timeS": 1140,
+                "temperatureC": 82.98
+              },
+              {
+                "timeS": 1170,
+                "temperatureC": 82.99
+              },
+              {
+                "timeS": 1200,
+                "temperatureC": 82.99
+              },
+              {
+                "timeS": 1230,
+                "temperatureC": 82.99
+              },
+              {
+                "timeS": 1260,
+                "temperatureC": 83
+              },
+              {
+                "timeS": 1290,
+                "temperatureC": 83
+              },
+              {
+                "timeS": 1320,
+                "temperatureC": 83
+              },
+              {
+                "timeS": 1350,
+                "temperatureC": 83
+              },
+              {
+                "timeS": 1380,
+                "temperatureC": 83
+              },
+              {
+                "timeS": 1410,
+                "temperatureC": 83
+              },
+              {
+                "timeS": 1440,
+                "temperatureC": 83.01
+              },
+              {
+                "timeS": 1470,
+                "temperatureC": 83.01
+              },
+              {
+                "timeS": 1500,
+                "temperatureC": 83.01
+              },
+              {
+                "timeS": 1530,
+                "temperatureC": 83.01
+              },
+              {
+                "timeS": 1560,
+                "temperatureC": 83.01
+              },
+              {
+                "timeS": 1590,
+                "temperatureC": 83.01
+              },
+              {
+                "timeS": 1620,
+                "temperatureC": 83.01
+              },
+              {
+                "timeS": 1650,
+                "temperatureC": 83.01
+              },
+              {
+                "timeS": 1680,
+                "temperatureC": 83.01
+              },
+              {
+                "timeS": 1710,
+                "temperatureC": 83.01
+              },
+              {
+                "timeS": 1740,
+                "temperatureC": 83.01
+              },
+              {
+                "timeS": 1770,
+                "temperatureC": 83.01
+              },
+              {
+                "timeS": 1800,
+                "temperatureC": 83.01
+              }
+            ],
+            "maxTemperatureC": 83,
+            "timeToLimitMinutes": 7.29,
+            "thermalResistanceKPerW": 0.487,
+            "effectiveCapacityJPerK": 312.5,
+            "solutionId": "gyroid",
+            "addedMassPercent": 9.6,
+            "interferenceRisk": "中",
+            "hotspotReductionC": 20.2,
+            "timeToLimitImprovementPercent": 107.7,
+            "score": 44.7,
+            "grade": "D"
+          }
+        ],
+        "recommendedSolutionId": "vein-bridge",
+        "riskLevel": "High",
+        "warnings": [
+          "当前结果为工程估算，不等同于 CFD/FEA 或认证测试结果。",
+          "上传实测 CSV 可用真实温升曲线校准模型。"
+        ]
+      }
+    },
+    {
+      "name": "measured-calibration",
+      "generatedAt": "2026-07-11T00:00:00.000Z",
+      "request": {
+        "hardwareId": "robot-joint",
+        "jointId": "knee",
+        "heatSources": {
+          "motor-winding": 60,
+          "mosfet": 20
+        },
+        "constraints": [
+          "sealed-case",
+          "warranty-seal",
+          "motor-untouched",
+          "reducer-untouched",
+          "cable-clearance",
+          "bearing-clearance",
+          "weight-limit"
+        ],
+        "optimizationGoals": [
+          "delay-limit",
+          "lower-hotspot",
+          "weight-limit",
+          "original-structure"
+        ],
+        "inputs": {
+          "ambientTemperatureC": 25,
+          "initialTemperatureC": 30,
+          "thermalLimitC": 80,
+          "durationMinutes": 15,
+          "dutyCyclePercent": 85,
+          "airflowMps": 0.3,
+          "componentMassKg": 1.8
+        },
+        "measurements": [
+          {
+            "timeS": 0,
+            "temperatureC": 31,
+            "powerW": 75
+          },
+          {
+            "timeS": 60,
+            "temperatureC": 38,
+            "powerW": 78
+          },
+          {
+            "timeS": 120,
+            "temperatureC": 46,
+            "powerW": 80
+          },
+          {
+            "timeS": 180,
+            "temperatureC": 54,
+            "powerW": 81
+          },
+          {
+            "timeS": 240,
+            "temperatureC": 61,
+            "powerW": 80
+          }
+        ]
+      },
+      "expected": {
+        "id": "analysis-2026-07-11T00:00:00.000Z",
+        "generatedAt": "2026-07-11T00:00:00.000Z",
+        "source": "measured-calibrated",
+        "methodLabel": "CSV 实测曲线校准 + 一阶 RC 热模型",
+        "totalPowerW": 78.8,
+        "baseline": {
+          "curve": [
+            {
+              "timeS": 0,
+              "temperatureC": 31,
+              "powerW": 75
+            },
+            {
+              "timeS": 60,
+              "temperatureC": 38,
+              "powerW": 78
+            },
+            {
+              "timeS": 120,
+              "temperatureC": 46,
+              "powerW": 80
+            },
+            {
+              "timeS": 180,
+              "temperatureC": 54,
+              "powerW": 81
+            },
+            {
+              "timeS": 240,
+              "temperatureC": 61,
+              "powerW": 80
+            }
+          ],
+          "maxTemperatureC": 61,
+          "timeToLimitMinutes": null,
+          "thermalResistanceKPerW": 0.457,
+          "effectiveCapacityJPerK": 394
+        },
+        "candidates": [
+          {
+            "curve": [
+              {
+                "timeS": 0,
+                "temperatureC": 31
+              },
+              {
+                "timeS": 60,
+                "temperatureC": 38.05
+              },
+              {
+                "timeS": 120,
+                "temperatureC": 43.06
+              },
+              {
+                "timeS": 180,
+                "temperatureC": 46.59
+              },
+              {
+                "timeS": 240,
+                "temperatureC": 48.94
+              }
+            ],
+            "maxTemperatureC": 48.9,
+            "timeToLimitMinutes": null,
+            "thermalResistanceKPerW": 0.356,
+            "effectiveCapacityJPerK": 417.6,
+            "solutionId": "vein-bridge",
+            "addedMassPercent": 6.8,
+            "interferenceRisk": "低",
+            "hotspotReductionC": 12.1,
+            "timeToLimitImprovementPercent": null,
+            "score": 81.3,
+            "grade": "A"
+          },
+          {
+            "curve": [
+              {
+                "timeS": 0,
+                "temperatureC": 31
+              },
+              {
+                "timeS": 60,
+                "temperatureC": 38.92
+              },
+              {
+                "timeS": 120,
+                "temperatureC": 44.85
+              },
+              {
+                "timeS": 180,
+                "temperatureC": 49.24
+              },
+              {
+                "timeS": 240,
+                "temperatureC": 52.35
+              }
+            ],
+            "maxTemperatureC": 52.4,
+            "timeToLimitMinutes": null,
+            "thermalResistanceKPerW": 0.434,
+            "effectiveCapacityJPerK": 401.9,
+            "solutionId": "flat-baseline",
+            "addedMassPercent": 2.2,
+            "interferenceRisk": "低",
+            "hotspotReductionC": 8.6,
+            "timeToLimitImprovementPercent": null,
+            "score": 72.7,
+            "grade": "B"
+          },
+          {
+            "curve": [
+              {
+                "timeS": 0,
+                "temperatureC": 31
+              },
+              {
+                "timeS": 60,
+                "temperatureC": 38.2
+              },
+              {
+                "timeS": 120,
+                "temperatureC": 43.48
+              },
+              {
+                "timeS": 180,
+                "temperatureC": 47.33
+              },
+              {
+                "timeS": 240,
+                "temperatureC": 50
+              }
+            ],
+            "maxTemperatureC": 50,
+            "timeToLimitMinutes": null,
+            "thermalResistanceKPerW": 0.386,
+            "effectiveCapacityJPerK": 425.5,
+            "solutionId": "pin-fin",
+            "addedMassPercent": 7.6,
+            "interferenceRisk": "中",
+            "hotspotReductionC": 11,
+            "timeToLimitImprovementPercent": null,
+            "score": 69.8,
+            "grade": "B"
+          },
+          {
+            "curve": [
+              {
+                "timeS": 0,
+                "temperatureC": 31
+              },
+              {
+                "timeS": 60,
+                "temperatureC": 38.06
+              },
+              {
+                "timeS": 120,
+                "temperatureC": 43.37
+              },
+              {
+                "timeS": 180,
+                "temperatureC": 47.3
+              },
+              {
+                "timeS": 240,
+                "temperatureC": 50.09
+              }
+            ],
+            "maxTemperatureC": 50.1,
+            "timeToLimitMinutes": null,
+            "thermalResistanceKPerW": 0.397,
+            "effectiveCapacityJPerK": 441.3,
+            "solutionId": "gyroid",
+            "addedMassPercent": 9.6,
+            "interferenceRisk": "中",
+            "hotspotReductionC": 10.9,
+            "timeToLimitImprovementPercent": null,
+            "score": 41.5,
+            "grade": "D"
+          }
+        ],
+        "recommendedSolutionId": "vein-bridge",
+        "riskLevel": "Low",
+        "warnings": [
+          "候选结构结果由实测基线校准推算，生产前仍需样机复测。"
+        ]
+      }
+    }
+  ]
+}

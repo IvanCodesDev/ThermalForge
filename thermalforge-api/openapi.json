@@ -1,0 +1,2973 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ThermalForge API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/health/live": {
+      "get": {
+        "tags": [
+          "health"
+        ],
+        "summary": "Live",
+        "operationId": "live_health_live_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object",
+                  "title": "Response Live Health Live Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "tags": [
+          "health"
+        ],
+        "summary": "Ready",
+        "operationId": "ready_health_ready_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Ready Health Ready Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/projects": {
+      "post": {
+        "tags": [
+          "projects"
+        ],
+        "summary": "Create Project",
+        "operationId": "create_project_v1_projects_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/projects/{project_id}/tasks": {
+      "post": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Create Task",
+        "operationId": "create_task_v1_projects__project_id__tasks_post",
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Project Id"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}": {
+      "get": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Get Task",
+        "operationId": "get_task_v1_tasks__task_id__get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/cancel": {
+      "post": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Cancel Task",
+        "operationId": "cancel_task_v1_tasks__task_id__cancel_post",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/start": {
+      "post": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Start Task",
+        "operationId": "start_task_v1_tasks__task_id__start_post",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/retry": {
+      "post": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Retry Task",
+        "operationId": "retry_task_v1_tasks__task_id__retry_post",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/artifacts": {
+      "get": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "List Task Artifacts",
+        "operationId": "list_task_artifacts_v1_tasks__task_id__artifacts_get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArtifactRead"
+                  },
+                  "title": "Response List Task Artifacts V1 Tasks  Task Id  Artifacts Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/events": {
+      "get": {
+        "tags": [
+          "tasks"
+        ],
+        "summary": "Stream Task Events",
+        "operationId": "stream_task_events_v1_tasks__task_id__events_get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          },
+          {
+            "name": "follow",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": true,
+              "title": "Follow"
+            }
+          },
+          {
+            "name": "Last-Event-ID",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Last-Event-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/documents": {
+      "post": {
+        "tags": [
+          "documents"
+        ],
+        "summary": "Upload Document",
+        "operationId": "upload_document_v1_tasks__task_id__documents_post",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_upload_document_v1_tasks__task_id__documents_post"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArtifactRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/clarification": {
+      "get": {
+        "tags": [
+          "clarifications"
+        ],
+        "summary": "Get Clarification",
+        "operationId": "get_clarification_v1_tasks__task_id__clarification_get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClarificationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "clarifications"
+        ],
+        "summary": "Answer Clarification",
+        "operationId": "answer_clarification_v1_tasks__task_id__clarification_post",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClarificationAnswer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClarificationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/engineering-brief": {
+      "get": {
+        "tags": [
+          "engineering"
+        ],
+        "summary": "Get Engineering Brief",
+        "operationId": "get_engineering_brief_v1_tasks__task_id__engineering_brief_get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EngineeringBrief"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/thermal-analysis": {
+      "get": {
+        "tags": [
+          "thermal-design"
+        ],
+        "summary": "Get Thermal Analysis",
+        "operationId": "get_thermal_analysis_v1_tasks__task_id__thermal_analysis_get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ThermalAnalysisResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/thermal-design": {
+      "get": {
+        "tags": [
+          "thermal-design"
+        ],
+        "summary": "Get Thermal Design",
+        "operationId": "get_thermal_design_v1_tasks__task_id__thermal_design_get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ThermalDesignSpec"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/image-manifest": {
+      "get": {
+        "tags": [
+          "images"
+        ],
+        "summary": "Get Task Image Manifest",
+        "operationId": "get_task_image_manifest_v1_tasks__task_id__image_manifest_get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskImageManifest"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/images/{artifact_id}/content": {
+      "get": {
+        "tags": [
+          "images"
+        ],
+        "summary": "Download Task Image",
+        "operationId": "download_task_image_v1_tasks__task_id__images__artifact_id__content_get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          },
+          {
+            "name": "artifact_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Artifact Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Immutable generated concept image bytes.",
+            "content": {
+              "image/png": {}
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/viewer-manifest": {
+      "get": {
+        "tags": [
+          "viewer"
+        ],
+        "summary": "Get Viewer Manifest",
+        "operationId": "get_viewer_manifest_v1_tasks__task_id__viewer_manifest_get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ViewerManifest"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tasks/{task_id}/models/{artifact_id}/content": {
+      "get": {
+        "tags": [
+          "viewer"
+        ],
+        "summary": "Download Viewer Model",
+        "operationId": "download_viewer_model_v1_tasks__task_id__models__artifact_id__content_get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          },
+          {
+            "name": "artifact_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Artifact Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Immutable model artifact bytes.",
+            "content": {
+              "application/octet-stream": {}
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/viewer-library": {
+      "get": {
+        "tags": [
+          "viewer"
+        ],
+        "summary": "Get Viewer Library",
+        "operationId": "get_viewer_library_v1_viewer_library_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ViewerLibrary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/viewer-library/{model_id}/content": {
+      "get": {
+        "tags": [
+          "viewer"
+        ],
+        "summary": "Download Viewer Library Model",
+        "operationId": "download_viewer_library_model_v1_viewer_library__model_id__content_get",
+        "parameters": [
+          {
+            "name": "model_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Model Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Immutable curated viewer model bytes.",
+            "content": {
+              "model/gltf-binary": {}
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnalysisAssumption": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Key"
+          },
+          "value": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Value"
+          },
+          "reason": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Reason"
+          },
+          "impact": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "title": "Impact"
+          },
+          "requires_confirmation": {
+            "type": "boolean",
+            "title": "Requires Confirmation",
+            "default": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "key",
+          "value",
+          "reason",
+          "impact"
+        ],
+        "title": "AnalysisAssumption"
+      },
+      "ArtifactKind": {
+        "type": "string",
+        "enum": [
+          "source_document",
+          "parsed_document",
+          "engineering_brief",
+          "thermal_analysis",
+          "thermal_design",
+          "concept_image",
+          "multiview_image",
+          "raw_model",
+          "normalized_model",
+          "report"
+        ],
+        "title": "ArtifactKind"
+      },
+      "ArtifactRead": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "task_id": {
+            "type": "string",
+            "title": "Task Id"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/ArtifactKind"
+          },
+          "version": {
+            "type": "integer",
+            "title": "Version"
+          },
+          "mime_type": {
+            "type": "string",
+            "title": "Mime Type"
+          },
+          "sha256": {
+            "type": "string",
+            "title": "Sha256"
+          },
+          "size_bytes": {
+            "type": "integer",
+            "title": "Size Bytes"
+          },
+          "storage_uri": {
+            "type": "string",
+            "title": "Storage Uri"
+          },
+          "metadata": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Metadata"
+          },
+          "quality_status": {
+            "$ref": "#/components/schemas/QualityStatus"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "task_id",
+          "kind",
+          "version",
+          "mime_type",
+          "sha256",
+          "size_bytes",
+          "storage_uri",
+          "quality_status",
+          "created_at"
+        ],
+        "title": "ArtifactRead"
+      },
+      "Assumption": {
+        "properties": {
+          "statement": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Statement"
+          },
+          "reason": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Reason"
+          },
+          "impact": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "title": "Impact"
+          },
+          "requires_confirmation": {
+            "type": "boolean",
+            "title": "Requires Confirmation",
+            "default": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "statement",
+          "reason",
+          "impact"
+        ],
+        "title": "Assumption"
+      },
+      "Body_upload_document_v1_tasks__task_id__documents_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_upload_document_v1_tasks__task_id__documents_post"
+      },
+      "CandidateEvaluation": {
+        "properties": {
+          "solution_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Solution Id"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Title"
+          },
+          "eligible": {
+            "type": "boolean",
+            "title": "Eligible"
+          },
+          "rejection_codes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Rejection Codes"
+          },
+          "thermal_score": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Thermal Score"
+          },
+          "cost_score": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Cost Score"
+          },
+          "risk_score": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Risk Score"
+          },
+          "added_mass_g": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Added Mass G"
+          },
+          "added_mass_percent": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Added Mass Percent"
+          },
+          "max_temperature_c": {
+            "type": "number",
+            "title": "Max Temperature C"
+          },
+          "hotspot_reduction_c": {
+            "type": "number",
+            "title": "Hotspot Reduction C"
+          },
+          "interference_risk": {
+            "type": "string",
+            "enum": [
+              "低",
+              "中",
+              "高"
+            ],
+            "title": "Interference Risk"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "solution_id",
+          "title",
+          "eligible",
+          "rejection_codes",
+          "thermal_score",
+          "cost_score",
+          "risk_score",
+          "added_mass_g",
+          "added_mass_percent",
+          "max_temperature_c",
+          "hotspot_reduction_c",
+          "interference_risk"
+        ],
+        "title": "CandidateEvaluation"
+      },
+      "CandidateResult": {
+        "properties": {
+          "curve": {
+            "items": {
+              "$ref": "#/components/schemas/ThermalCurvePoint"
+            },
+            "type": "array",
+            "maxItems": 5001,
+            "minItems": 1,
+            "title": "Curve"
+          },
+          "maxTemperatureC": {
+            "type": "number",
+            "title": "Maxtemperaturec"
+          },
+          "timeToLimitMinutes": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timetolimitminutes"
+          },
+          "thermalResistanceKPerW": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Thermalresistancekperw"
+          },
+          "effectiveCapacityJPerK": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Effectivecapacityjperk"
+          },
+          "solutionId": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Solutionid"
+          },
+          "score": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Score"
+          },
+          "grade": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "title": "Grade"
+          },
+          "addedMassPercent": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Addedmasspercent"
+          },
+          "interferenceRisk": {
+            "type": "string",
+            "enum": [
+              "低",
+              "中",
+              "高"
+            ],
+            "title": "Interferencerisk"
+          },
+          "hotspotReductionC": {
+            "type": "number",
+            "title": "Hotspotreductionc"
+          },
+          "timeToLimitImprovementPercent": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timetolimitimprovementpercent"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "curve",
+          "maxTemperatureC",
+          "timeToLimitMinutes",
+          "thermalResistanceKPerW",
+          "effectiveCapacityJPerK",
+          "solutionId",
+          "score",
+          "grade",
+          "addedMassPercent",
+          "interferenceRisk",
+          "hotspotReductionC",
+          "timeToLimitImprovementPercent"
+        ],
+        "title": "CandidateResult"
+      },
+      "ClarificationAnswer": {
+        "properties": {
+          "answer": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Answer"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "answer"
+        ],
+        "title": "ClarificationAnswer"
+      },
+      "ClarificationRead": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "task_id": {
+            "type": "string",
+            "title": "Task Id"
+          },
+          "field_key": {
+            "type": "string",
+            "title": "Field Key"
+          },
+          "question": {
+            "type": "string",
+            "title": "Question"
+          },
+          "answer": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Answer"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "answered_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Answered At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "task_id",
+          "field_key",
+          "question",
+          "answer",
+          "created_at",
+          "answered_at"
+        ],
+        "title": "ClarificationRead"
+      },
+      "ComponentExplanation": {
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,79}$",
+            "title": "Component Id"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Name"
+          },
+          "explanation": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Explanation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "component_id",
+          "name",
+          "explanation"
+        ],
+        "title": "ComponentExplanation"
+      },
+      "DesignRisk": {
+        "properties": {
+          "source": {
+            "type": "string",
+            "enum": [
+              "engineering_brief",
+              "thermal_analysis",
+              "solution_catalog",
+              "llm_assessment"
+            ],
+            "title": "Source"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Description"
+          },
+          "impact": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "title": "Impact"
+          },
+          "recommended_action": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Recommended Action"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source",
+          "description",
+          "impact",
+          "recommended_action"
+        ],
+        "title": "DesignRisk"
+      },
+      "EngineeringBrief": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "title": "Schema Version",
+            "default": "1.0"
+          },
+          "project_title": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Project Title"
+          },
+          "heat_sources": {
+            "items": {
+              "$ref": "#/components/schemas/HeatSource"
+            },
+            "type": "array",
+            "title": "Heat Sources"
+          },
+          "environment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/OperatingEnvironment"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "envelope": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Envelope"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "mass_budget": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MassBudget"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "mounting_constraints": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Mounting Constraints"
+          },
+          "required_features": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Required Features"
+          },
+          "prohibited_changes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Prohibited Changes"
+          },
+          "material_constraints": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Material Constraints"
+          },
+          "manufacturing_constraints": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Manufacturing Constraints"
+          },
+          "assumptions": {
+            "items": {
+              "$ref": "#/components/schemas/Assumption"
+            },
+            "type": "array",
+            "title": "Assumptions"
+          },
+          "conflicts": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Conflicts"
+          },
+          "missing_required_fields": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Missing Required Fields"
+          },
+          "follow_up_question": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Follow Up Question"
+          },
+          "overall_confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Overall Confidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "project_title",
+          "overall_confidence"
+        ],
+        "title": "EngineeringBrief"
+      },
+      "Envelope": {
+        "properties": {
+          "width_mm": {
+            "type": "number",
+            "maximum": 100000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Width Mm"
+          },
+          "height_mm": {
+            "type": "number",
+            "maximum": 100000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Height Mm"
+          },
+          "depth_mm": {
+            "type": "number",
+            "maximum": 100000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Depth Mm"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/EvidenceRef"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Evidence"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "width_mm",
+          "height_mm",
+          "depth_mm",
+          "evidence",
+          "confidence"
+        ],
+        "title": "Envelope"
+      },
+      "EvidenceRef": {
+        "properties": {
+          "source_kind": {
+            "type": "string",
+            "enum": [
+              "document",
+              "user_prompt",
+              "clarification"
+            ],
+            "title": "Source Kind"
+          },
+          "quote": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Quote"
+          },
+          "artifact_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Artifact Id"
+          },
+          "chunk_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chunk Id"
+          },
+          "clarification_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Clarification Id"
+          },
+          "page_number": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page Number"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source_kind",
+          "quote"
+        ],
+        "title": "EvidenceRef"
+      },
+      "GenerationBrief": {
+        "properties": {
+          "design_intent": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Design Intent"
+          },
+          "positive_constraints": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "Positive Constraints"
+          },
+          "negative_constraints": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "title": "Negative Constraints"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "design_intent",
+          "positive_constraints"
+        ],
+        "title": "GenerationBrief"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HeatSource": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 160,
+            "minLength": 1,
+            "title": "Name"
+          },
+          "power_w": {
+            "type": "number",
+            "maximum": 100000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Power W"
+          },
+          "maximum_temperature_c": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1000.0,
+                "minimum": -100.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Maximum Temperature C"
+          },
+          "duty_cycle_percent": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100.0,
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duty Cycle Percent"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/EvidenceRef"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Evidence"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "power_w",
+          "evidence",
+          "confidence"
+        ],
+        "title": "HeatSource"
+      },
+      "MassBudget": {
+        "properties": {
+          "maximum_added_mass_g": {
+            "type": "number",
+            "maximum": 1000000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Maximum Added Mass G"
+          },
+          "maximum_added_mass_percent": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100.0,
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Maximum Added Mass Percent"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/EvidenceRef"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Evidence"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "maximum_added_mass_g",
+          "evidence",
+          "confidence"
+        ],
+        "title": "MassBudget"
+      },
+      "OperatingEnvironment": {
+        "properties": {
+          "ambient_temp_c": {
+            "type": "number",
+            "maximum": 200.0,
+            "minimum": -100.0,
+            "title": "Ambient Temp C"
+          },
+          "airflow_m_s": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 200.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Airflow M S"
+          },
+          "humidity_percent": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Humidity Percent"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/EvidenceRef"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Evidence"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "ambient_temp_c",
+          "evidence",
+          "confidence"
+        ],
+        "title": "OperatingEnvironment"
+      },
+      "ProjectCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "ProjectCreate"
+      },
+      "ProjectRead": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "created_at"
+        ],
+        "title": "ProjectRead"
+      },
+      "QualityStatus": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "approved",
+          "rejected"
+        ],
+        "title": "QualityStatus"
+      },
+      "SelectedThermalSolution": {
+        "properties": {
+          "solution_id": {
+            "type": "string",
+            "title": "Solution Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "tag": {
+            "type": "string",
+            "title": "Tag"
+          },
+          "features": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Features"
+          },
+          "score": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Score"
+          },
+          "grade": {
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "title": "Grade"
+          },
+          "max_temperature_c": {
+            "type": "number",
+            "title": "Max Temperature C"
+          },
+          "time_to_limit_minutes": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time To Limit Minutes"
+          },
+          "thermal_resistance_k_per_w": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Thermal Resistance K Per W"
+          },
+          "effective_capacity_j_per_k": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Effective Capacity J Per K"
+          },
+          "added_mass_g": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Added Mass G"
+          },
+          "added_mass_percent": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Added Mass Percent"
+          },
+          "interference_risk": {
+            "type": "string",
+            "enum": [
+              "低",
+              "中",
+              "高"
+            ],
+            "title": "Interference Risk"
+          },
+          "hotspot_reduction_c": {
+            "type": "number",
+            "title": "Hotspot Reduction C"
+          },
+          "time_to_limit_improvement_percent": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time To Limit Improvement Percent"
+          },
+          "cost_score": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Cost Score"
+          },
+          "risk_score": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Risk Score"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "solution_id",
+          "title",
+          "tag",
+          "features",
+          "score",
+          "grade",
+          "max_temperature_c",
+          "time_to_limit_minutes",
+          "thermal_resistance_k_per_w",
+          "effective_capacity_j_per_k",
+          "added_mass_g",
+          "added_mass_percent",
+          "interference_risk",
+          "hotspot_reduction_c",
+          "time_to_limit_improvement_percent",
+          "cost_score",
+          "risk_score"
+        ],
+        "title": "SelectedThermalSolution"
+      },
+      "TaskCreate": {
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "maxLength": 10000,
+            "title": "Prompt",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "title": "TaskCreate"
+      },
+      "TaskImageAsset": {
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "title": "Artifact Id"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "concept_image",
+              "multiview_image"
+            ],
+            "title": "Kind"
+          },
+          "view_id": {
+            "type": "string",
+            "title": "View Id"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "mime_type": {
+            "type": "string",
+            "const": "image/png",
+            "title": "Mime Type"
+          },
+          "sha256": {
+            "type": "string",
+            "title": "Sha256"
+          },
+          "size_bytes": {
+            "type": "integer",
+            "title": "Size Bytes"
+          },
+          "provider": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provider"
+          },
+          "provider_model": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provider Model"
+          }
+        },
+        "type": "object",
+        "required": [
+          "artifact_id",
+          "kind",
+          "view_id",
+          "url",
+          "mime_type",
+          "sha256",
+          "size_bytes"
+        ],
+        "title": "TaskImageAsset"
+      },
+      "TaskImageManifest": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "const": "1.0",
+            "title": "Schema Version",
+            "default": "1.0"
+          },
+          "task_id": {
+            "type": "string",
+            "title": "Task Id"
+          },
+          "images": {
+            "items": {
+              "$ref": "#/components/schemas/TaskImageAsset"
+            },
+            "type": "array",
+            "title": "Images"
+          },
+          "notice": {
+            "type": "string",
+            "title": "Notice",
+            "default": "概念图用于方案沟通，不是 CAD、CFD、FEA 或制造验证结果。"
+          }
+        },
+        "type": "object",
+        "required": [
+          "task_id"
+        ],
+        "title": "TaskImageManifest"
+      },
+      "TaskRead": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "project_id": {
+            "type": "string",
+            "title": "Project Id"
+          },
+          "status": {
+            "$ref": "#/components/schemas/TaskStatus"
+          },
+          "stage": {
+            "$ref": "#/components/schemas/TaskStatus"
+          },
+          "prompt": {
+            "type": "string",
+            "title": "Prompt"
+          },
+          "idempotency_key": {
+            "type": "string",
+            "title": "Idempotency Key"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "project_id",
+          "status",
+          "stage",
+          "prompt",
+          "idempotency_key",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "TaskRead"
+      },
+      "TaskStatus": {
+        "type": "string",
+        "enum": [
+          "created",
+          "uploaded",
+          "parsing",
+          "awaiting_input",
+          "briefing",
+          "thermal_analysis",
+          "concept_imaging",
+          "multiview_imaging",
+          "multiview_review",
+          "modeling",
+          "model_review",
+          "ready",
+          "failed",
+          "cancelled"
+        ],
+        "title": "TaskStatus"
+      },
+      "ThermalAnalysisResult": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Id"
+          },
+          "generatedAt": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Generatedat"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "engineering-estimate",
+              "measured-calibrated"
+            ],
+            "title": "Source"
+          },
+          "methodLabel": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Methodlabel"
+          },
+          "totalPowerW": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Totalpowerw"
+          },
+          "baseline": {
+            "$ref": "#/components/schemas/ThermalCaseResult"
+          },
+          "candidates": {
+            "items": {
+              "$ref": "#/components/schemas/CandidateResult"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Candidates"
+          },
+          "recommendedSolutionId": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Recommendedsolutionid"
+          },
+          "riskLevel": {
+            "type": "string",
+            "enum": [
+              "Low",
+              "Medium",
+              "High"
+            ],
+            "title": "Risklevel"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "generatedAt",
+          "source",
+          "methodLabel",
+          "totalPowerW",
+          "baseline",
+          "candidates",
+          "recommendedSolutionId",
+          "riskLevel",
+          "warnings"
+        ],
+        "title": "ThermalAnalysisResult"
+      },
+      "ThermalCaseResult": {
+        "properties": {
+          "curve": {
+            "items": {
+              "$ref": "#/components/schemas/ThermalCurvePoint"
+            },
+            "type": "array",
+            "maxItems": 5001,
+            "minItems": 1,
+            "title": "Curve"
+          },
+          "maxTemperatureC": {
+            "type": "number",
+            "title": "Maxtemperaturec"
+          },
+          "timeToLimitMinutes": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timetolimitminutes"
+          },
+          "thermalResistanceKPerW": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Thermalresistancekperw"
+          },
+          "effectiveCapacityJPerK": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Effectivecapacityjperk"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "curve",
+          "maxTemperatureC",
+          "timeToLimitMinutes",
+          "thermalResistanceKPerW",
+          "effectiveCapacityJPerK"
+        ],
+        "title": "ThermalCaseResult"
+      },
+      "ThermalCurvePoint": {
+        "properties": {
+          "timeS": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Times"
+          },
+          "temperatureC": {
+            "type": "number",
+            "maximum": 10000.0,
+            "minimum": -100.0,
+            "title": "Temperaturec"
+          },
+          "powerW": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100000.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Powerw"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "timeS",
+          "temperatureC"
+        ],
+        "title": "ThermalCurvePoint"
+      },
+      "ThermalDesignSpec": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "title": "Schema Version",
+            "default": "1.0"
+          },
+          "task_id": {
+            "type": "string",
+            "title": "Task Id"
+          },
+          "engineering_brief_artifact_id": {
+            "type": "string",
+            "title": "Engineering Brief Artifact Id"
+          },
+          "thermal_analysis_artifact_id": {
+            "type": "string",
+            "title": "Thermal Analysis Artifact Id"
+          },
+          "analysis_id": {
+            "type": "string",
+            "title": "Analysis Id"
+          },
+          "baseline_max_temperature_c": {
+            "type": "number",
+            "title": "Baseline Max Temperature C"
+          },
+          "baseline_time_to_limit_minutes": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Time To Limit Minutes"
+          },
+          "selected_solution": {
+            "$ref": "#/components/schemas/SelectedThermalSolution"
+          },
+          "candidate_evaluations": {
+            "items": {
+              "$ref": "#/components/schemas/CandidateEvaluation"
+            },
+            "type": "array",
+            "title": "Candidate Evaluations"
+          },
+          "rationale": {
+            "type": "string",
+            "title": "Rationale"
+          },
+          "heat_transfer_path": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Heat Transfer Path"
+          },
+          "material_recommendations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Material Recommendations"
+          },
+          "geometry_anchors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Geometry Anchors"
+          },
+          "manufacturing_recommendations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Manufacturing Recommendations"
+          },
+          "component_explanations": {
+            "items": {
+              "$ref": "#/components/schemas/ComponentExplanation"
+            },
+            "type": "array",
+            "title": "Component Explanations"
+          },
+          "generation_brief": {
+            "$ref": "#/components/schemas/GenerationBrief"
+          },
+          "assumptions": {
+            "items": {
+              "$ref": "#/components/schemas/AnalysisAssumption"
+            },
+            "type": "array",
+            "title": "Assumptions"
+          },
+          "risks": {
+            "items": {
+              "$ref": "#/components/schemas/DesignRisk"
+            },
+            "type": "array",
+            "title": "Risks"
+          },
+          "unverified_items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Unverified Items"
+          },
+          "requires_human_confirmation": {
+            "type": "boolean",
+            "title": "Requires Human Confirmation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "task_id",
+          "engineering_brief_artifact_id",
+          "thermal_analysis_artifact_id",
+          "analysis_id",
+          "baseline_max_temperature_c",
+          "baseline_time_to_limit_minutes",
+          "selected_solution",
+          "candidate_evaluations",
+          "rationale",
+          "heat_transfer_path",
+          "material_recommendations",
+          "geometry_anchors",
+          "manufacturing_recommendations",
+          "component_explanations",
+          "generation_brief",
+          "assumptions",
+          "risks",
+          "unverified_items",
+          "requires_human_confirmation"
+        ],
+        "title": "ThermalDesignSpec"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "ViewerAsset": {
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "title": "Artifact Id"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "raw_model",
+              "normalized_model"
+            ],
+            "title": "Kind"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "stl",
+              "glb",
+              "gltf",
+              "obj"
+            ],
+            "title": "Format"
+          },
+          "mime_type": {
+            "type": "string",
+            "title": "Mime Type"
+          },
+          "sha256": {
+            "type": "string",
+            "title": "Sha256"
+          },
+          "size_bytes": {
+            "type": "integer",
+            "title": "Size Bytes"
+          },
+          "transform": {
+            "$ref": "#/components/schemas/ViewerTransform"
+          }
+        },
+        "type": "object",
+        "required": [
+          "artifact_id",
+          "kind",
+          "url",
+          "format",
+          "mime_type",
+          "sha256",
+          "size_bytes"
+        ],
+        "title": "ViewerAsset"
+      },
+      "ViewerLibrary": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "const": "1.0",
+            "title": "Schema Version",
+            "default": "1.0"
+          },
+          "models": {
+            "items": {
+              "$ref": "#/components/schemas/ViewerLibraryModel"
+            },
+            "type": "array",
+            "title": "Models"
+          }
+        },
+        "type": "object",
+        "title": "ViewerLibrary"
+      },
+      "ViewerLibraryModel": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "asset": {
+            "$ref": "#/components/schemas/ViewerAsset"
+          },
+          "supports_explosion": {
+            "type": "boolean",
+            "title": "Supports Explosion",
+            "default": false
+          },
+          "parts": {
+            "items": {
+              "$ref": "#/components/schemas/ViewerPart"
+            },
+            "type": "array",
+            "title": "Parts"
+          },
+          "notices": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Notices"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "description",
+          "asset"
+        ],
+        "title": "ViewerLibraryModel"
+      },
+      "ViewerManifest": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "const": "1.0",
+            "title": "Schema Version",
+            "default": "1.0"
+          },
+          "task_id": {
+            "type": "string",
+            "title": "Task Id"
+          },
+          "asset": {
+            "$ref": "#/components/schemas/ViewerAsset"
+          },
+          "variants": {
+            "items": {
+              "$ref": "#/components/schemas/ViewerVariant"
+            },
+            "type": "array",
+            "title": "Variants"
+          },
+          "notices": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Notices"
+          }
+        },
+        "type": "object",
+        "required": [
+          "task_id",
+          "asset"
+        ],
+        "title": "ViewerManifest"
+      },
+      "ViewerPart": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "binding": {
+            "type": "string",
+            "enum": [
+              "whole_asset",
+              "node_names"
+            ],
+            "title": "Binding"
+          },
+          "node_names": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Node Names"
+          },
+          "explode": {
+            "anyOf": [
+              {
+                "prefixItems": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ],
+                "type": "array",
+                "maxItems": 3,
+                "minItems": 3
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Explode"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "description",
+          "binding"
+        ],
+        "title": "ViewerPart"
+      },
+      "ViewerTransform": {
+        "properties": {
+          "translation": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 3,
+            "minItems": 3,
+            "title": "Translation",
+            "default": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "rotation": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 4,
+            "minItems": 4,
+            "title": "Rotation",
+            "description": "Rotation quaternion ordered as x, y, z, w.",
+            "default": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "scale": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 3,
+            "minItems": 3,
+            "title": "Scale",
+            "default": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "type": "object",
+        "title": "ViewerTransform"
+      },
+      "ViewerVariant": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "asset": {
+            "$ref": "#/components/schemas/ViewerAsset"
+          },
+          "supports_explosion": {
+            "type": "boolean",
+            "title": "Supports Explosion",
+            "default": false
+          },
+          "parts": {
+            "items": {
+              "$ref": "#/components/schemas/ViewerPart"
+            },
+            "type": "array",
+            "title": "Parts"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "asset"
+        ],
+        "title": "ViewerVariant"
+      }
+    }
+  }
+}

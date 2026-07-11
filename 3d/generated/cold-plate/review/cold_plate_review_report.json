@@ -1,0 +1,749 @@
+{
+  "model": {
+    "title": "layered_microchannel_cold_plate_as_coded.SLDPRT",
+    "path": "E:\\Projects\\HACKATHON\\ThermalForge\\3d\\generated\\cold-plate\\layered_microchannel_cold_plate_as_coded.SLDPRT",
+    "type": 1,
+    "feature_count": 167,
+    "features": [
+      {
+        "name": "收藏",
+        "type": "FavoriteFolder"
+      },
+      {
+        "name": "历史记录",
+        "type": "HistoryFolder"
+      },
+      {
+        "name": "选择集",
+        "type": "SelectionSetFolder"
+      },
+      {
+        "name": "传感器",
+        "type": "SensorFolder"
+      },
+      {
+        "name": "设计活页夹",
+        "type": "DocsFolder"
+      },
+      {
+        "name": "注解",
+        "type": "DetailCabinet"
+      },
+      {
+        "name": "标注",
+        "type": "InkMarkupFolder"
+      },
+      {
+        "name": "光源与相机",
+        "type": "EnvFolder"
+      },
+      {
+        "name": "实体",
+        "type": "SolidBodyFolder"
+      },
+      {
+        "name": "曲面实体",
+        "type": "SurfaceBodyFolder"
+      },
+      {
+        "name": "备注",
+        "type": "CommentsFolder"
+      },
+      {
+        "name": "方程式",
+        "type": "EqnFolder"
+      },
+      {
+        "name": "材质 <未指定>",
+        "type": "MaterialFolder"
+      },
+      {
+        "name": "前视基准面",
+        "type": "RefPlane"
+      },
+      {
+        "name": "上视基准面",
+        "type": "RefPlane"
+      },
+      {
+        "name": "右视基准面",
+        "type": "RefPlane"
+      },
+      {
+        "name": "原点",
+        "type": "OriginProfileFeature"
+      },
+      {
+        "name": "Tables",
+        "type": "ConfigTableFolder"
+      },
+      {
+        "name": "Layer_1_Base_Plate",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Left_Frame",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Right_Frame",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Bottom_End_Wall",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Top_End_Wall",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_001",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_002",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_003",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_004",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_005",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_006",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_007",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_008",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_009",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_010",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_011",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_012",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_013",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_014",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_015",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_016",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_017",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_018",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_019",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_020",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_021",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_022",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_023",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_024",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_025",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_026",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_027",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_028",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_029",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_030",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_031",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_032",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_033",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_034",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_035",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_036",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_037",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_038",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_039",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_040",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_041",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_042",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_043",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_044",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_045",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_046",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_047",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_048",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_049",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_050",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_051",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_052",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_053",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_054",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_055",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_056",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_057",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_058",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_059",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_060",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_061",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_062",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_063",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_064",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_065",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_066",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_067",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_068",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_069",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_070",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_071",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_072",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_073",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_074",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_075",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_076",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_077",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_078",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_079",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_080",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_081",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_082",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_083",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_084",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_085",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_086",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_087",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_088",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_089",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_090",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_091",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_092",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_093",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_094",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_095",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_096",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_097",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_098",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_099",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_100",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_101",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_102",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_103",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_104",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_105",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_106",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_107",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_108",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_109",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_110",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_111",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_112",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_113",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_114",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_115",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_116",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_117",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_118",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_119",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_120",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_121",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_122",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_123",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_124",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_125",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_126",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_127",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_128",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_129",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_130",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_131",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_132",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_133",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_134",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_135",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_136",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_137",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_138",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_2_Channel_Wall_139",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_3_Cover_Left_Block",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_3_Cover_Right_Block",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_3_Cover_Bottom_Edge",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_3_Cover_Center_Block",
+        "type": "BaseBody"
+      },
+      {
+        "name": "Layer_3_Cover_Top_Edge",
+        "type": "BaseBody"
+      }
+    ]
+  },
+  "previews": [
+    {
+      "path": "E:\\Projects\\HACKATHON\\ThermalForge\\3d\\generated\\cold-plate\\review\\cold_plate_isometric.bmp",
+      "exists": true,
+      "size_bytes": 4800054,
+      "width": 1600,
+      "height": 1000,
+      "unique_sample_values": 11,
+      "likely_blank": false
+    },
+    {
+      "path": "E:\\Projects\\HACKATHON\\ThermalForge\\3d\\generated\\cold-plate\\review\\cold_plate_front.bmp",
+      "exists": true,
+      "size_bytes": 4800054,
+      "width": 1600,
+      "height": 1000,
+      "unique_sample_values": 11,
+      "likely_blank": false
+    },
+    {
+      "path": "E:\\Projects\\HACKATHON\\ThermalForge\\3d\\generated\\cold-plate\\review\\cold_plate_top.bmp",
+      "exists": true,
+      "size_bytes": 4800054,
+      "width": 1600,
+      "height": 1000,
+      "unique_sample_values": 11,
+      "likely_blank": false
+    },
+    {
+      "path": "E:\\Projects\\HACKATHON\\ThermalForge\\3d\\generated\\cold-plate\\review\\cold_plate_right.bmp",
+      "exists": true,
+      "size_bytes": 4800054,
+      "width": 1600,
+      "height": 1000,
+      "unique_sample_values": 11,
+      "likely_blank": false
+    }
+  ],
+  "expected_outputs": [
+    {
+      "path": "E:\\Projects\\HACKATHON\\ThermalForge\\3d\\generated\\cold-plate\\layered_microchannel_cold_plate_as_coded.SLDPRT",
+      "exists": true,
+      "size_bytes": 598251
+    },
+    {
+      "path": "E:\\Projects\\HACKATHON\\ThermalForge\\3d\\generated\\cold-plate\\layered_microchannel_cold_plate_as_coded.step",
+      "exists": true,
+      "size_bytes": 1617390
+    }
+  ],
+  "checks": {
+    "model_available": true,
+    "previews_created": true,
+    "previews_not_blank": true,
+    "expected_outputs_exist": true,
+    "feature_summary_available": true
+  },
+  "review_notes": [
+    "人工或视觉模型仍需检查预览图中的主体、比例、方向、关键部件、重叠/悬空问题。",
+    "若 previews_not_blank 为 false，优先检查视图缩放、模型是否为空、SaveBMP 是否成功。",
+    "若 expected_outputs_exist 为 false，优先检查保存/导出路径和 COM 错误码。"
+  ],
+  "evaluation": {
+    "status": "pass",
+    "score": 100,
+    "issues": [],
+    "recommendations": [],
+    "manual_review_required": true,
+    "manual_review_reason": "规则评分只能发现明显失败，最终几何是否符合用户意图仍需查看预览图或截图。"
+  },
+  "summary_path": "E:\\Projects\\HACKATHON\\ThermalForge\\3d\\generated\\cold-plate\\review\\cold_plate_review_summary.md"
+}
