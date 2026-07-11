@@ -1,0 +1,6 @@
+/file/set-tui-version "25.1"
+/file/read-case "share0711_solutionjournal0711_config_only_energy_on.cas.h5"
+/solve/initialize/hyb-initialization
+/solve/iterate 300
+/file/write-case-data "share0711_solutionjournal0711_energy_on_300iter.cas.h5"
+/exit yes

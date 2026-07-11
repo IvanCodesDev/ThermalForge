@@ -79,3 +79,11 @@
 /data/share0711_journal
 /data/share0711_sub.sh
 /data/share0711_tui_journal
+/data/share0711_config_journal
+/data/chunks/
+
+# Root-level HPC submit scripts
+/sub_*.sh
+
+# Temp assistant state
+/.tmp-*/
