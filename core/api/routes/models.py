@@ -41,7 +41,9 @@ def _raise_provider_error(exc: ProviderError) -> None:
     ) from exc
 
 
-@router.get("/config")
+@router.get("/config",
+             response_description="可公开的模型配置",
+             responses={200: {"description": "成功", "content": {"application/json": {"example": {"openai": {"configured": True, "text_model": "gpt-5.6-sol"}, "hyper3d": {"configured": True}, "timeout_seconds": 120, "routes": {"text_responses": "/models/text/responses"}}}}}})
 async def model_config(settings: Settings = Depends(get_settings)):
     """返回可公开的模型配置，不回显任何密钥。"""
     return {
@@ -66,7 +68,9 @@ async def model_config(settings: Settings = Depends(get_settings)):
 
 
 @router.post("/text/responses")
-@router.post("/gpt-5.5/responses")
+@router.post("/gpt-5.5/responses",
+             response_description="上游 Responses API 的原始响应",
+             responses={502: {"description": "上游模型服务错误"}})
 async def text_responses(
     body: GPT55ResponseIn,
     client: OpenAIModelsClient = Depends(get_openai_client),
@@ -86,7 +90,9 @@ async def text_responses(
         _raise_provider_error(exc)
 
 
-@router.post("/gpt-image-2/generations")
+@router.post("/gpt-image-2/generations",
+             response_description="上游 Image API 的原始响应",
+             responses={502: {"description": "上游模型服务错误"}})
 async def gpt_image_2_generations(
     body: GPTImage2GenerateIn,
     client: OpenAIModelsClient = Depends(get_openai_client),
@@ -107,7 +113,9 @@ async def gpt_image_2_generations(
         _raise_provider_error(exc)
 
 
-@router.post("/hyper3d/tasks")
+@router.post("/hyper3d/tasks",
+             response_description="Hyper3D 提交响应（含 subscription_key）",
+             responses={422: {"description": "图片不是有效 Base64"}, 502: {"description": "上游 Hyper3D 错误"}})
 async def hyper3d_submit(
     body: Hyper3DSubmitIn,
     client: Hyper3DClient = Depends(get_hyper3d_client),
@@ -131,7 +139,9 @@ async def hyper3d_submit(
         _raise_provider_error(exc)
 
 
-@router.post("/hyper3d/bang")
+@router.post("/hyper3d/bang",
+             response_description="Bang 分件任务响应",
+             responses={422: {"description": "输入文件不是有效 Base64"}, 502: {"description": "上游 Hyper3D 错误"}})
 async def hyper3d_bang(
     body: Hyper3DBangIn,
     client: Hyper3DClient = Depends(get_hyper3d_client),
@@ -172,7 +182,9 @@ async def hyper3d_bang(
         _raise_provider_error(exc)
 
 
-@router.get("/hyper3d/balance")
+@router.get("/hyper3d/balance",
+             response_description="Hyper3D 账户余额",
+             responses={502: {"description": "上游 Hyper3D 错误"}})
 async def hyper3d_balance(
     client: Hyper3DClient = Depends(get_hyper3d_client),
 ):
@@ -183,7 +195,9 @@ async def hyper3d_balance(
         _raise_provider_error(exc)
 
 
-@router.post("/hyper3d/status")
+@router.post("/hyper3d/status",
+             response_description="任务进度状态",
+             responses={502: {"description": "上游 Hyper3D 错误"}})
 async def hyper3d_status(
     body: Hyper3DStatusIn,
     client: Hyper3DClient = Depends(get_hyper3d_client),
@@ -195,7 +209,9 @@ async def hyper3d_status(
         _raise_provider_error(exc)
 
 
-@router.post("/hyper3d/download")
+@router.post("/hyper3d/download",
+             response_description="模型下载列表",
+             responses={502: {"description": "上游 Hyper3D 错误"}})
 async def hyper3d_download(
     body: Hyper3DDownloadIn,
     client: Hyper3DClient = Depends(get_hyper3d_client),

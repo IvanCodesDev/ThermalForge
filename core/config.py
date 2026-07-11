@@ -51,6 +51,16 @@ class Settings(BaseSettings):
         default=str(PROJECT_ROOT / "data" / "thermalforge.db"),
         validation_alias="THERMALFORGE_DB_PATH",
     )
+    # ── SolidWorks 配置 ──
+    solidworks_enabled: bool = Field(
+        default=False, validation_alias="SOLIDWORKS_ENABLED"
+    )
+    solidworks_exe: str = Field(
+        default="", validation_alias="SOLIDWORKS_EXE"
+    )
+    solidworks_timeout_seconds: float = Field(
+        default=900.0, validation_alias="SOLIDWORKS_TIMEOUT_SECONDS"
+    )
 
     @property
     def cors_origin_list(self) -> list[str]:

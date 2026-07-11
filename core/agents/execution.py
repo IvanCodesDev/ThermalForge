@@ -94,6 +94,8 @@ def build_default_tool_adapters() -> ToolAdapterRegistry:
     registry.register("source_content_reader", lambda payload, context: payload)
     registry.register("engineering_schema_reader", lambda payload, context: payload)
     registry.register("simulation_result_reader", lambda payload, context: payload)
+    registry.register("optimization_feedback_reader", lambda payload, context: payload)
+    registry.register("optimization_plan_reader", lambda payload, context: payload)
     return registry
 
 
@@ -112,6 +114,17 @@ def build_default_quality_gates() -> QualityGateRegistry:
         lambda input_payload, output_payload, context: context.engineering_revision is not None,
     )
     registry.register("reproducible", lambda input_payload, output_payload, context: bool(output_payload))
+    registry.register(
+        "feasibility_check",
+        lambda input_payload, output_payload, context: (
+            isinstance(output_payload.get("instructions"), list)
+            and len(output_payload["instructions"]) > 0
+        ),
+    )
+    registry.register(
+        "confirmed_plan",
+        lambda input_payload, output_payload, context: bool(output_payload),
+    )
     return registry
 
 

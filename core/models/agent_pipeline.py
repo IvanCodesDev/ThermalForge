@@ -17,6 +17,12 @@ class PipelineState(StrEnum):
     HYPER3D_READY = "hyper3d_ready"
     HYPER3D_SUBMITTED = "hyper3d_submitted"
     HYPER3D_DONE = "hyper3d_done"
+    # ── SolidWorks 优化反馈闭环 ──
+    OPTIMIZATION_REVIEW = "optimization_review"
+    OPTIMIZATION_PLANNED = "optimization_planned"
+    SOLIDWORKS_SUBMITTED = "solidworks_submitted"
+    SOLIDWORKS_DONE = "solidworks_done"
+    # ── 终态 ──
     VALIDATION_REVIEW = "validation_review"
     COMPLETED = "completed"
     REJECTED = "rejected"
@@ -127,10 +133,10 @@ class ValidationReport(BaseModel):
 class PipelineArtifact(BaseModel):
     model_config = ConfigDict(extra="forbid")
     id: str
-    role: Literal["engineering_step", "engineering_glb", "reference_render", "hyper3d_glb", "hyper3d_preview", "bang_glb", "manifest"]
+    role: Literal["engineering_step", "engineering_glb", "reference_render", "hyper3d_glb", "hyper3d_preview", "bang_glb", "manifest", "solidworks_step", "solidworks_stl", "solidworks_preview", "optimization_manifest"]
     uri: str
     provider: str
-    fidelity: Literal["source", "engineering_proxy", "concept_mesh", "metadata"]
+    fidelity: Literal["source", "engineering_proxy", "concept_mesh", "metadata", "optimized_cad", "optimized_mesh"]
     task_uuid: str | None = None
 
 
@@ -163,6 +169,10 @@ class AgentPipeline(BaseModel):
     artifacts: list[PipelineArtifact] = Field(default_factory=list)
     events: list[AgentEvent] = Field(default_factory=list)
     requires_human_confirmation: Literal[True] = True
+    # ── SolidWorks 优化闭环 ──
+    optimization_iterations: list[Any] = Field(default_factory=list)
+    current_optimization_iteration: int = Field(default=0, ge=0)
+    solidworks_contract: Any | None = None
 
 
 class CreatePipelineRequest(BaseModel):

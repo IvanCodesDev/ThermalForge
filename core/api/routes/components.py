@@ -12,7 +12,12 @@ from core.services.component_analysis import ComponentAnalysisRequest, Component
 router = APIRouter(prefix="/api/v1/components", tags=["component-analysis"])
 
 
-@router.post("/analyze")
+@router.post("/analyze",
+             summary="组件工程分析",
+             description="对概念 3D 组件清单做工程分析，输出前端可消费的 ComponentManifest。AI 分析可由请求体 use_ai 开关；"
+             "REAL 模式下强制 use_ai=true（关闭确定性回退）。",
+             response_description="ComponentManifest",
+             responses={200: {"description": "分析成功", "content": {"application/json": {"example": {"components": [{"id": "root.0", "role": "shell", "material": "PA12-CF"}]}}}}, 422: {"description": "REAL 模式要求 use_ai=true 或参数校验失败"}, 502: {"description": "上游模型服务错误"}})
 async def analyze_components(
     body: ComponentAnalysisRequest,
     client: OpenAIModelsClient = Depends(get_openai_client),
